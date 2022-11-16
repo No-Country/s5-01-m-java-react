@@ -2,7 +2,7 @@ package com.fourjuniors.juniors.mapper;
 
 import com.fourjuniors.juniors.dto.UserDto;
 import com.fourjuniors.juniors.entity.User;
-import org.springframework.web.bind.annotation.Mapping;
+import org.mapstruct.factory.Mappers;
 
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -11,17 +11,13 @@ import org.springframework.context.annotation.Primary;
 
 
 
-@Mapper(componentModel = "spring")
-public interface UserResponseMapper {
+@Mapper
+public interface UserMapper {
 
-    @Mappings({
-            @Mapping(target = "role", source = "role.roleName"),
+    UserMapper INSTANCE = Mappers.getMapper(UserMapper.class);
 
+    @Mapping(source = "role.roleName", target = "role")
 
-    })
-    public UserDto userToUserResponse(User user);
-
-
-
+    public UserDto userToUserDto(User user);
 
 }
