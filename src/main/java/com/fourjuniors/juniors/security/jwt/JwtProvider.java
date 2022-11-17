@@ -17,6 +17,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
+
 @Component
 public class JwtProvider {
 
@@ -26,26 +27,20 @@ public class JwtProvider {
     private String secret;
 
     @Value("${jwt.expiration}")
-    private int expiration;
+    private long expiration;
 
     public String generateToken(Authentication authentication) {
         UserDetails userDetails = (UserDetails) authentication.getPrincipal();
         return Jwts.builder()
-                .signWith(getKey(secret))
                 .setSubject(userDetails.getUsername())
-                .setIssuedAt(new Date())
-                .setExpiration(new Date(new Date().getTime() + expiration * 1000))
                 .claim("roles", getRoles(userDetails))
-                .claim("cara", "feisima")
+                .setIssuedAt(new Date())
+                .setExpiration(new Date(System.currentTimeMillis() + expiration * 1000))
+                .signWith(getKey(secret))
                 .compact();
     }
 
     public String getUsernameFromToken(String token) {
-        /*return Jwts.parser()
-                .setSigningKey(secret)
-                .parseClaimsJws(token)
-                .getBody().getSubject();
-         */
         return Jwts.parserBuilder()
                 .setSigningKey(getKey(secret))
                 .build()
@@ -55,13 +50,6 @@ public class JwtProvider {
 
     public boolean validateToken(String token) {
         try {
-            /*
-            Jwts.parser()
-                    .setSigningKey(secret)
-                    .parseClaimsJws(token)
-                    .getBody();
-                    */
-
             Jwts.parserBuilder()
                     .setSigningKey(getKey(secret))
                     .build()
@@ -78,7 +66,7 @@ public class JwtProvider {
             logger.error("bad signature");
         } catch (IllegalArgumentException e) {
             e.printStackTrace();
-        } catch (Exception e){
+        } catch (Exception e) {
             logger.error("fail token");
         }
         return false;
@@ -91,8 +79,8 @@ public class JwtProvider {
                 .collect(Collectors.toList());
     }
 
-    private Key getKey(String secret){
-        byte [] secretBytes = Decoders.BASE64.decode(secret);
+    private Key getKey(String secret) {
+        byte[] secretBytes = Decoders.BASE64.decode(secret);
         return Keys.hmacShaKeyFor(secretBytes);
     }
 }

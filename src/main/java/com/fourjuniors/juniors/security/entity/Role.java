@@ -1,10 +1,14 @@
 package com.fourjuniors.juniors.security.entity;
 
-import com.tutorial.crudmongoback.security.enums.RoleEnum;
+import com.fourjuniors.juniors.security.enums.RoleEnum;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Entity
+@Getter @Setter
+@NoArgsConstructor @AllArgsConstructor
+@Builder
 public class Role {
 
     @Id
@@ -14,27 +18,4 @@ public class Role {
     @Enumerated(value = EnumType.STRING)
     private RoleEnum name;
 
-    public Role() {
-    }
-
-    public Role(Long id, RoleEnum name) {
-        this.id = id;
-        this.name = name;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public RoleEnum getName() {
-        return name;
-    }
-
-    public void setName(RoleEnum name) {
-        this.name = name;
-    }
 }

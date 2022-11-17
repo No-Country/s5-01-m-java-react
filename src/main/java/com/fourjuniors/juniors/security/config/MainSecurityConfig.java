@@ -1,8 +1,8 @@
 package com.fourjuniors.juniors.security.config;
 
-import com.tutorial.crudmongoback.security.jwt.JwtEntryPoint;
-import com.tutorial.crudmongoback.security.jwt.JwtFilter;
-import com.tutorial.crudmongoback.security.service.UserDetailsServiceImpl;
+import com.fourjuniors.juniors.security.jwt.JwtEntryPoint;
+import com.fourjuniors.juniors.security.jwt.JwtFilter;
+import com.fourjuniors.juniors.security.service.implementation.UserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -14,6 +14,8 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+
+import static org.springframework.http.HttpMethod.GET;
 
 @Configuration
 @EnableWebSecurity
@@ -53,7 +55,10 @@ public class MainSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .csrf()
                 .disable()
-                .authorizeRequests().antMatchers("/auth/**").permitAll()
+                .authorizeRequests()
+                .antMatchers(GET, "/test/allUsers").hasAnyAuthority("ROLE_USER", "ROLE_ADMIN")
+                .antMatchers(GET, "/test/onlyAdmin").hasAnyAuthority("ROLE_ADMIN")
+                .antMatchers("/auth/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .exceptionHandling().authenticationEntryPoint(jwtEntryPoint)

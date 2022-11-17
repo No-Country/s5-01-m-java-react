@@ -1,4 +1,4 @@
-package com.fourjuniors.juniors.entity;
+package com.fourjuniors.juniors.model.entity;
 
 import lombok.Data;
 
@@ -10,7 +10,6 @@ import javax.persistence.*;
 public class Project {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id", nullable = false)
     private Long id;
 
     @Column(name = "projectname")
@@ -23,9 +22,8 @@ public class Project {
     private String projectmembers;
 
     @OneToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST,CascadeType.MERGE,CascadeType.DETACH,CascadeType.REFRESH})
-    @JoinColumn(name = "image", nullable = true)
-    @Column(name = "image")
-    private Image projectimage;
+    @JoinColumn(name = "image_id")
+    private Image image;
 
     @Column(name = "projectlinkrol")
     private String projectlinkrol;
