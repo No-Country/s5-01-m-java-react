@@ -1,10 +1,10 @@
 package com.fourjuniors.juniors.security.controller;
 
 import com.fourjuniors.juniors.exception.AttributeException;
-import com.fourjuniors.juniors.security.dto.request.CreateUserRequest;
-import com.fourjuniors.juniors.security.dto.request.LoginUserRequest;
-import com.fourjuniors.juniors.security.dto.response.CreateUserResponse;
-import com.fourjuniors.juniors.security.dto.response.LoginUserResponse;
+import com.fourjuniors.juniors.security.model.dto.request.CreateUserRequest;
+import com.fourjuniors.juniors.security.model.dto.request.LoginUserRequest;
+import com.fourjuniors.juniors.security.model.dto.response.CreateUserResponse;
+import com.fourjuniors.juniors.security.model.dto.response.LoginUserResponse;
 import com.fourjuniors.juniors.security.service.implementation.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

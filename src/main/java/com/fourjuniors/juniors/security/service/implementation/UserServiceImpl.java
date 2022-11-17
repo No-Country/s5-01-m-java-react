@@ -2,11 +2,11 @@ package com.fourjuniors.juniors.security.service.implementation;
 
 import com.fourjuniors.juniors.exception.AttributeException;
 import com.fourjuniors.juniors.exception.ResourceNotFoundException;
-import com.fourjuniors.juniors.security.dto.mapper.CreateUserMapper;
-import com.fourjuniors.juniors.security.dto.request.CreateUserRequest;
-import com.fourjuniors.juniors.security.dto.request.LoginUserRequest;
-import com.fourjuniors.juniors.security.dto.response.CreateUserResponse;
-import com.fourjuniors.juniors.security.dto.response.LoginUserResponse;
+import com.fourjuniors.juniors.security.model.mapper.CreateUserMapper;
+import com.fourjuniors.juniors.security.model.dto.request.CreateUserRequest;
+import com.fourjuniors.juniors.security.model.dto.request.LoginUserRequest;
+import com.fourjuniors.juniors.security.model.dto.response.CreateUserResponse;
+import com.fourjuniors.juniors.security.model.dto.response.LoginUserResponse;
 import com.fourjuniors.juniors.security.entity.User;
 import com.fourjuniors.juniors.security.entity.Role;
 import com.fourjuniors.juniors.security.enums.RoleEnum;
