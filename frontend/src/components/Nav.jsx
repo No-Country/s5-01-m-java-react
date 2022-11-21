@@ -2,10 +2,10 @@ import React from "react";
 import { NavLink } from 'react-router-dom'
 import Headroom from "react-headroom";
 import "bootswatch/dist/lux/bootstrap.min.css";
-import logo from '../assets/img/LOGO.png'
+import logo from '../assets/img/logoLarge.png'
 
 
-export default function Header() {
+export default function Nav() {
     return (
         <>
             <Headroom>
@@ -13,7 +13,7 @@ export default function Header() {
                     <div className="container-fluid  ">
                         <div className="container d-flex justify-content-between ">
                             <div>
-                                <NavLink className="nav-link" to="/home"><img src={logo} alt="logo" width="50px" /></NavLink>
+                                <NavLink className="nav-link" to="/home"><img src={logo} alt="logo" width="15%" /></NavLink>
                             </div>
 
                             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">

@@ -1,5 +1,5 @@
 import React from 'react'
-import Header from '../../components/Header';
+import Nav from '../../components/Nav';
 import "bootswatch/dist/lux/bootstrap.min.css";
 import logo from '../../assets/img/LOGO.png'
 import './detail.css'
@@ -11,7 +11,7 @@ import { faStar } from '@fortawesome/free-regular-svg-icons'
 const Detail = () => {
   return (
     <>
-      <Header />
+      <Nav/>
       <div className="container mt-5">
         <div className="row">
           <div className="col-2 d-flex justify-content-end">

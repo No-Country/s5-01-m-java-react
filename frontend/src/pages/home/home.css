@@ -1,0 +1,27 @@
+.header{
+    display: flex;
+    justify-content: center;
+}
+
+.title{
+    font-size: 50px;
+}
+
+.paragraph{
+    font-size: 23px;
+}
+
+.polygon{
+    display: flex;
+    justify-content: center;
+}
+
+.titleCategories{
+    text-align: center;
+}
+
+.btnCenter{
+    position: relative;
+    right: 590px;
+    margin-top: 50px;
+}
