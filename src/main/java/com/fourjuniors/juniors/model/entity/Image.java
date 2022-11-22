@@ -1,4 +1,4 @@
-package com.fourjuniors.juniors.entity;
+package com.fourjuniors.juniors.model.entity;
 
 
 import lombok.Data;
@@ -10,8 +10,7 @@ import javax.persistence.*;
 @Table(name = "image")
 public class Image {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id", nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String path;

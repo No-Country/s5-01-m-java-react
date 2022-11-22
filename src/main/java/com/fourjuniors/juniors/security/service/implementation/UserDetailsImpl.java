@@ -1,6 +1,6 @@
-package com.fourjuniors.juniors.security.service;
+package com.fourjuniors.juniors.security.service.implementation;
 
-import com.tutorial.crudmongoback.security.entity.User;
+import com.fourjuniors.juniors.security.model.entity.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -9,12 +9,15 @@ import java.util.Collection;
 import java.util.stream.Collectors;
 
 public class UserDetailsImpl implements UserDetails {
+
+    private Long id;
     private String username;
     private String email;
     private String password;
     private Collection<? extends GrantedAuthority> authorities;
 
-    public UserDetailsImpl(String username, String email, String password, Collection<? extends GrantedAuthority> authorities) {
+    public UserDetailsImpl(Long id, String username, String email, String password, Collection<? extends GrantedAuthority> authorities) {
+        this.id = id;
         this.username = username;
         this.email = email;
         this.password = password;
@@ -22,11 +25,12 @@ public class UserDetailsImpl implements UserDetails {
     }
 
     public static UserDetailsImpl build(User user){
+        Long id = user.getId();
         Collection<GrantedAuthority> authorities =
                 user.getRoles().stream()
                         .map(role -> new SimpleGrantedAuthority(role.getName().toString())
                                 ).collect(Collectors.toList());
-        return new UserDetailsImpl(user.getUsername(), user.getEmail(), user.getPassword(), authorities);
+        return new UserDetailsImpl(id, user.getUsername(), user.getEmail(), user.getPassword(), authorities);
     }
 
     @Override
@@ -62,5 +66,9 @@ public class UserDetailsImpl implements UserDetails {
     @Override
     public boolean isEnabled() {
         return true;
+    }
+
+    public Long getId() {
+        return id;
     }
 }

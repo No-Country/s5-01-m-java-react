@@ -1,11 +1,11 @@
 package com.fourjuniors.juniors.security.controller;
 
-import com.tutorial.crudmongoback.exceptions.AttributteException;
-import com.tutorial.crudmongoback.security.dto.CreateUserDto;
-import com.tutorial.crudmongoback.security.dto.JwtTokenDto;
-import com.tutorial.crudmongoback.security.dto.LoginUserDto;
-import com.tutorial.crudmongoback.security.entity.User;
-import com.tutorial.crudmongoback.security.service.UserService;
+import com.fourjuniors.juniors.exception.AttributeException;
+import com.fourjuniors.juniors.security.model.dto.request.CreateUserRequest;
+import com.fourjuniors.juniors.security.model.dto.request.LoginUserRequest;
+import com.fourjuniors.juniors.security.model.dto.response.CreateUserResponse;
+import com.fourjuniors.juniors.security.model.dto.response.LoginUserResponse;
+import com.fourjuniors.juniors.security.service.implementation.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,16 +20,16 @@ import javax.validation.Valid;
 public class AuthController {
 
     @Autowired
-    UserService userService;
+    UserServiceImpl userServiceImpl;
 
     @PostMapping("/signup")
-    public ResponseEntity<User> create(@Valid @RequestBody CreateUserDto dto) throws AttributteException {
-        return ResponseEntity.ok(userService.create(dto));
+    public ResponseEntity<CreateUserResponse> create(@Valid @RequestBody CreateUserRequest request) throws AttributeException {
+        return ResponseEntity.ok(userServiceImpl.create(request));
     }
 
     @PostMapping("/login")
-    public ResponseEntity<JwtTokenDto> login(@Valid @RequestBody LoginUserDto dto) throws AttributteException {
-        JwtTokenDto jwtTokenDto = userService.login(dto);
-        return ResponseEntity.ok(jwtTokenDto);
+    public ResponseEntity<LoginUserResponse> login(@Valid @RequestBody LoginUserRequest dto) throws AttributeException {
+        LoginUserResponse response = userServiceImpl.login(dto);
+        return ResponseEntity.ok(response);
     }
 }

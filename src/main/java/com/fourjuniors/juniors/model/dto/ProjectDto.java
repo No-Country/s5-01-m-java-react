@@ -1,10 +1,8 @@
-package com.fourjuniors.juniors.dto;
+package com.fourjuniors.juniors.model.dto;
 
-import com.fourjuniors.juniors.entity.Image;
+import com.fourjuniors.juniors.model.entity.Image;
 import lombok.Builder;
 import lombok.Data;
-
-import javax.persistence.*;
 
 @Data
 @Builder

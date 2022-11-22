@@ -1,6 +1,6 @@
 package com.fourjuniors.juniors.security.jwt;
 
-import com.tutorial.crudmongoback.security.service.UserDetailsServiceImpl;
+import com.fourjuniors.juniors.security.service.implementation.UserDetailsServiceImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +20,6 @@ import java.io.IOException;
 @Component
 public class JwtFilter extends OncePerRequestFilter {
     private static final Logger logger = LoggerFactory.getLogger(JwtFilter.class);
-
     @Autowired
     JwtProvider jwtProvider;
 
@@ -35,7 +34,7 @@ public class JwtFilter extends OncePerRequestFilter {
                 String username = jwtProvider.getUsernameFromToken(token);
                 UserDetails userDetails = userDetailsService.loadUserByUsername(username);
                 UsernamePasswordAuthenticationToken authenticationToken =
-                        new UsernamePasswordAuthenticationToken(userDetails.getUsername(), null, userDetails.getAuthorities());
+                        new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
                 SecurityContextHolder.getContext().setAuthentication(authenticationToken);
             }
         } catch (UsernameNotFoundException e) {

@@ -1,7 +1,7 @@
-package com.fourjuniors.juniors.security.service;
+package com.fourjuniors.juniors.security.service.implementation;
 
-import com.tutorial.crudmongoback.security.entity.User;
-import com.tutorial.crudmongoback.security.repository.UserRepository;
+import com.fourjuniors.juniors.security.model.entity.User;
+import com.fourjuniors.juniors.security.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
