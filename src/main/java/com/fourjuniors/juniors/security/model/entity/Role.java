@@ -1,4 +1,4 @@
-package com.fourjuniors.juniors.security.entity;
+package com.fourjuniors.juniors.security.model.entity;
 
 import com.fourjuniors.juniors.security.enums.RoleEnum;
 import lombok.*;

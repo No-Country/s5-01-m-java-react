@@ -1,6 +1,6 @@
 package com.fourjuniors.juniors.security.model.dto.response;
 
-import com.fourjuniors.juniors.security.entity.Role;
+import com.fourjuniors.juniors.security.model.entity.Role;
 import lombok.*;
 
 import java.util.List;

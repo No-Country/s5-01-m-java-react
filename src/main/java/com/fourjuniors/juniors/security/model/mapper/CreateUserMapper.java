@@ -1,7 +1,9 @@
 package com.fourjuniors.juniors.security.model.mapper;
-
+import com.fourjuniors.juniors.security.model.dto.request.CreateUserRequest;
+import com.fourjuniors.juniors.security.model.entity.User;
 import com.fourjuniors.juniors.security.model.dto.response.CreateUserResponse;
-import com.fourjuniors.juniors.security.entity.User;
+
+import java.util.ArrayList;
 
 public class CreateUserMapper {
 
@@ -17,6 +19,21 @@ public class CreateUserMapper {
                 .profile(user.getProfile())
                 .experience(user.getExperience())
                 .roles(user.getRoles())
+                .build();
+    }
+
+    public static User mapToEntity(CreateUserRequest request, String passwordEncoded){
+
+        return User.builder()
+                .username(request.getUsername())
+                .email(request.getEmail())
+                .password(passwordEncoded)
+                .lastname(request.getLastname())
+                .portfolio(request.getPortfolio())
+                .profile(request.getProfile())
+                .experience(request.getExperience())
+                .stack(request.getStack())
+                .roles(new ArrayList<>())
                 .build();
     }
 }

@@ -1,6 +1,6 @@
 package com.fourjuniors.juniors.security.service.implementation;
 
-import com.fourjuniors.juniors.security.entity.User;
+import com.fourjuniors.juniors.security.model.entity.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

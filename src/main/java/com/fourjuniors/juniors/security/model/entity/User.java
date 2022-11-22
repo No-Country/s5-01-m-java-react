@@ -1,9 +1,8 @@
-package com.fourjuniors.juniors.security.entity;
+package com.fourjuniors.juniors.security.model.entity;
 
 import lombok.*;
 
 import javax.persistence.*;
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 

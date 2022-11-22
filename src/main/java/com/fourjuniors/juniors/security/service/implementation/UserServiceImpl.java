@@ -7,8 +7,8 @@ import com.fourjuniors.juniors.security.model.dto.request.CreateUserRequest;
 import com.fourjuniors.juniors.security.model.dto.request.LoginUserRequest;
 import com.fourjuniors.juniors.security.model.dto.response.CreateUserResponse;
 import com.fourjuniors.juniors.security.model.dto.response.LoginUserResponse;
-import com.fourjuniors.juniors.security.entity.User;
-import com.fourjuniors.juniors.security.entity.Role;
+import com.fourjuniors.juniors.security.model.entity.User;
+import com.fourjuniors.juniors.security.model.entity.Role;
 import com.fourjuniors.juniors.security.enums.RoleEnum;
 import com.fourjuniors.juniors.security.jwt.JwtProvider;
 import com.fourjuniors.juniors.security.repository.RoleRepository;
@@ -21,6 +21,8 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
 
 
 @Service
@@ -46,12 +48,10 @@ public class UserServiceImpl implements UserService {
 
         String password = passwordEncoder.encode(request.getPassword());
 
-        User user = new User();
-        user.setUsername(request.getUsername());
-        user.setPassword(password);
-        user.setEmail(request.getEmail());
+        User user = CreateUserMapper.mapToEntity(request, password);
+
         try {
-            Role userRole = roleRepository.findByName(RoleEnum.ROLE_ADMIN)
+            Role userRole = roleRepository.findByName(RoleEnum.ROLE_USER)
                     .orElseThrow(() -> new ResourceNotFoundException("role does not exist"));
             user.getRoles().add(userRole);
         } catch (ResourceNotFoundException e) {
@@ -62,7 +62,7 @@ public class UserServiceImpl implements UserService {
         return CreateUserMapper.mapToDto(userInserted);
     }
 
-    public LoginUserResponse login(LoginUserRequest request){
+    public LoginUserResponse login(LoginUserRequest request) {
         Authentication authentication =
                 authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(request.getUsername(), request.getPassword()));
         SecurityContextHolder.getContext().setAuthentication(authentication);

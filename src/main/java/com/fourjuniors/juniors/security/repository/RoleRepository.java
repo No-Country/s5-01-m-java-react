@@ -1,6 +1,6 @@
 package com.fourjuniors.juniors.security.repository;
 
-import com.fourjuniors.juniors.security.entity.Role;
+import com.fourjuniors.juniors.security.model.entity.Role;
 import com.fourjuniors.juniors.security.enums.RoleEnum;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
