@@ -9,11 +9,11 @@ export default function Nav() {
     return (
         <>
             <Headroom>
-                <nav className="navbar navbar-expand-lg navbar-dark bg-primary p-2" >
+                <nav className="navbar navbar-expand-lg bg-white p-2" >
                     <div className="container-fluid  ">
                         <div className="container d-flex justify-content-between ">
                             <div>
-                                <NavLink className="nav-link" to="/home"><img src={logo} alt="logo" width="15%" /></NavLink>
+                                <NavLink className="nav-link" to="/home"><img src={logo} alt="logo" width="20%" /></NavLink>
                             </div>
 
                             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,10 +24,19 @@ export default function Nav() {
                         <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
                             <ul className="navbar-nav align-items-center">
                                 <li className="nav-item align-items-center">
+                                    <NavLink to="/home" className="nav-link">Proyectos</NavLink>
+                                </li>
+                                <li className="nav-item align-items-center">
                                     <NavLink to="/home" className="nav-link">Home</NavLink>
                                 </li>
                                 <li className="nav-item">
                                     <NavLink to="/detail" className="nav-link">Detail</NavLink>
+                                </li>
+                                <li className="nav-item">
+                                    <NavLink to="/login" className="nav-link">Inicia Sesion</NavLink>
+                                </li>
+                                <li className="nav-item">
+                                    <NavLink to="/register" className="nav-link">Registrate</NavLink>
                                 </li>
 
                             </ul>

@@ -1,0 +1,69 @@
+.background{
+    background-color: #130400;
+}
+
+.containerLogin{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.imageLogo{
+    width: 150px;
+    margin-bottom: 10px;
+}
+
+.textLogin{
+    font-size: 22px;
+    color: white;
+    margin-bottom: 0;
+}
+
+.data{
+    color: white;
+    text-align: center;
+}
+
+.containerForm{
+    display: flex;
+    flex-direction: column;
+}
+
+label{
+    color: #fff;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+input{
+    width: 250px;
+    outline: none;
+    padding: 5px;
+}
+
+.margin{
+    margin-bottom: 10px;
+}
+
+button{
+    background-color: #F62223;
+    color: #fff;
+    width: 120px;
+    margin: auto;
+    padding: 5px;
+}
+
+.passwordLogin{
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+    font-size: 10px;
+    margin-top: 5px;
+}
+
+.passwordLogin a{
+    color: #F62223;
+    text-decoration: none;
+}

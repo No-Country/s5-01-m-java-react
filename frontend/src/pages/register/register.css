@@ -1,0 +1,27 @@
+.containerRegister{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.imageLogo{
+    margin-top: 10px;
+}
+
+.textRegister{
+    font-size: 22px;
+    color: white;
+    margin-bottom: 0;
+}
+
+button{
+    margin-bottom: 10px;
+}
+
+.passwordRegister{
+    color: #fff;
+    font-size: 10px;
+    margin-top: 5px;
+}
