@@ -1,6 +1,6 @@
 package com.fourjuniors.juniors.security.model.entity;
 
-import com.fourjuniors.juniors.security.enums.RoleEnum;
+import com.fourjuniors.juniors.security.model.enums.RoleEnum;
 import lombok.*;
 
 import javax.persistence.*;

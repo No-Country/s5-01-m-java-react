@@ -3,6 +3,7 @@ package com.fourjuniors.juniors.model.entity;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Data
@@ -12,28 +13,18 @@ public class Project {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "projectname")
-    private String projectname;
+    private String name;
 
-    @Column(name = "projectdescription")
-    private String projectdescription;
+    private String type;
 
-    @Column(name = "projectmembers")
-    private String projectmembers;
+    private String stack;
+
+    private String description;
+
+    private String link;
 
     @OneToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST,CascadeType.MERGE,CascadeType.DETACH,CascadeType.REFRESH})
     @JoinColumn(name = "image_id")
     private Image image;
 
-    @Column(name = "projectlinkrol")
-    private String projectlinkrol;
-
-    @Column(name = "projectlink")
-    private String projectlink;
-
-    @Column(name = "projectstack")
-    private String projectstack;
-
-    @Column(name = "projecttype")
-    private String projecttype;
 }

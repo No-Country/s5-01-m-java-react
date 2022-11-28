@@ -1,4 +1,4 @@
-package com.fourjuniors.juniors.security.enums;
+package com.fourjuniors.juniors.security.model.enums;
 
 public enum RoleEnum {
 

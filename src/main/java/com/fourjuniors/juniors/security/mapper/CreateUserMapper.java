@@ -1,4 +1,4 @@
-package com.fourjuniors.juniors.security.model.mapper;
+package com.fourjuniors.juniors.security.mapper;
 import com.fourjuniors.juniors.security.model.dto.request.CreateUserRequest;
 import com.fourjuniors.juniors.security.model.entity.User;
 import com.fourjuniors.juniors.security.model.dto.response.CreateUserResponse;
@@ -9,15 +9,14 @@ public class CreateUserMapper {
 
     public static CreateUserResponse mapToDto(User user){
         return CreateUserResponse.builder()
-                .username(user.getUsername())
                 .email(user.getEmail())
                 .password(user.getPassword())
-                .stack(user.getStack())
-                .portfolio(user.getPortfolio())
-                .experience(user.getExperience())
+                .name(user.getName())
                 .lastname(user.getLastname())
                 .profile(user.getProfile())
+                .stack(user.getStack())
                 .experience(user.getExperience())
+                .portfolio(user.getPortfolio())
                 .roles(user.getRoles())
                 .build();
     }
@@ -25,14 +24,14 @@ public class CreateUserMapper {
     public static User mapToEntity(CreateUserRequest request, String passwordEncoded){
 
         return User.builder()
-                .username(request.getUsername())
                 .email(request.getEmail())
                 .password(passwordEncoded)
+                .name(request.getName())
                 .lastname(request.getLastname())
-                .portfolio(request.getPortfolio())
                 .profile(request.getProfile())
-                .experience(request.getExperience())
                 .stack(request.getStack())
+                .experience(request.getExperience())
+                .portfolio(request.getPortfolio())
                 .roles(new ArrayList<>())
                 .build();
     }

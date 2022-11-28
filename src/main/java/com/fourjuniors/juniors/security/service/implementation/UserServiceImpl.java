@@ -2,14 +2,14 @@ package com.fourjuniors.juniors.security.service.implementation;
 
 import com.fourjuniors.juniors.exception.AttributeException;
 import com.fourjuniors.juniors.exception.ResourceNotFoundException;
-import com.fourjuniors.juniors.security.model.mapper.CreateUserMapper;
+import com.fourjuniors.juniors.security.mapper.CreateUserMapper;
 import com.fourjuniors.juniors.security.model.dto.request.CreateUserRequest;
 import com.fourjuniors.juniors.security.model.dto.request.LoginUserRequest;
 import com.fourjuniors.juniors.security.model.dto.response.CreateUserResponse;
 import com.fourjuniors.juniors.security.model.dto.response.LoginUserResponse;
 import com.fourjuniors.juniors.security.model.entity.User;
 import com.fourjuniors.juniors.security.model.entity.Role;
-import com.fourjuniors.juniors.security.enums.RoleEnum;
+import com.fourjuniors.juniors.security.model.enums.RoleEnum;
 import com.fourjuniors.juniors.security.jwt.JwtProvider;
 import com.fourjuniors.juniors.security.repository.RoleRepository;
 import com.fourjuniors.juniors.security.repository.UserRepository;
@@ -21,8 +21,6 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-
-import java.util.ArrayList;
 
 
 @Service
@@ -41,8 +39,6 @@ public class UserServiceImpl implements UserService {
     AuthenticationManager authenticationManager;
 
     public CreateUserResponse create(CreateUserRequest request) throws AttributeException {
-        if (userRepository.existsByUsername(request.getUsername()))
-            throw new AttributeException("username is already in use");
         if (userRepository.existsByEmail(request.getEmail()))
             throw new AttributeException("email is already in use");
 
@@ -64,7 +60,7 @@ public class UserServiceImpl implements UserService {
 
     public LoginUserResponse login(LoginUserRequest request) {
         Authentication authentication =
-                authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(request.getUsername(), request.getPassword()));
+                authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(request.getEmail(), request.getPassword()));
         SecurityContextHolder.getContext().setAuthentication(authentication);
         String token = jwtProvider.generateToken(authentication);
 

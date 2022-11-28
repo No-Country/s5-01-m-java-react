@@ -8,8 +8,8 @@ import javax.validation.constraints.NotBlank;
 @NoArgsConstructor @AllArgsConstructor
 @Builder
 public class LoginUserRequest {
-    @NotBlank(message = "username is mandatory")
-    private String username;
+    @NotBlank(message = "email is mandatory")
+    private String email;
     @NotBlank(message = "password is mandatory")
     private String password;
 }

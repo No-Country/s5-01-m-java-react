@@ -1,5 +1,6 @@
 package com.fourjuniors.juniors.security.model.entity;
 
+import com.fourjuniors.juniors.model.entity.UsersProjects;
 import lombok.*;
 
 import javax.persistence.*;
@@ -14,23 +15,23 @@ import java.util.List;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(nullable = false)
     private Long id;
 
-    private String username;
     private String email;
     private String password;
+    private String name;
     private String lastname;
-    private String portfolio;
     private String profile;
-    private String experience;
     private String stack;
+    private String experience;
+    private String portfolio;
 
     @ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinTable(
             name = "users_role",
-            joinColumns = @JoinColumn(name = "role"),
-            inverseJoinColumns = @JoinColumn(name = "users")
+            joinColumns = @JoinColumn(name = "role_id"),
+            inverseJoinColumns = @JoinColumn(name = "user_id")
     )
     private List<Role> roles = new ArrayList<>();
+
 }

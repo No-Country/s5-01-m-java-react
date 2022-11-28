@@ -9,21 +9,21 @@ import javax.validation.constraints.NotBlank;
 @Builder
 public class CreateUserRequest {
 
-    @NotBlank(message = "username is mandatory")
-    private String username;
-    @NotBlank(message = "username is mandatory")
+    @NotBlank(message = "email is mandatory")
     @Email(message = "Invalid email")
     private String email;
-    @NotBlank(message = "username is mandatory")
+    @NotBlank(message = "password is mandatory")
     private String password;
+    @NotBlank(message = "name is mandatory")
+    private String name;
     @NotBlank(message = "lastname is mandatory")
     private String lastname;
-    @NotBlank(message = "portfolio is mandatory")
-    private String portfolio;
     @NotBlank(message = "profile is mandatory")
     private String profile;
-    @NotBlank(message = "experience is mandatory")
-    private String experience;
     @NotBlank(message = "stack is mandatory")
     private String stack;
+    @NotBlank(message = "experience is mandatory")
+    private String experience;
+    @NotBlank(message = "portfolio is mandatory")
+    private String portfolio;
 }

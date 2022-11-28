@@ -12,13 +12,13 @@ import java.util.List;
 @Builder
 public class CreateUserResponse {
 
-    private String username;
     private String email;
     private String password;
+    private String name;
     private String lastname;
-    private String portfolio;
     private String profile;
-    private String experience;
     private String stack;
+    private String experience;
+    private String portfolio;
     private List<Role> roles;
 }
