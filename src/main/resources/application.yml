@@ -3,18 +3,14 @@ server:
 
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/4juniors?useSSL=false&serverTimezone=UTC
+    url: jdbc:mysql://${DB_USERNAME}:${DB_PASSWORD}@${DB_HOST:localhost}:${DB_PORT:3306}/${DB_DATABASE:4juniors}
     username: ${DB_USERNAME}
-<<<<<<< HEAD
-    password:
-=======
     password: ${DB_PASSWORD}
->>>>>>> 0f94cd5e7f7c805a01dd78d7f52dcc6d2a8d0fa5
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
       ddl-auto: update
-    database-platform: org.hibernate.dialect.MySQL8Dialect
+    database-platform: org.hibernate.dialect.MySQL5Dialect
   mvc:
     pathmatch:
       matching-strategy: ant-path-matcher
