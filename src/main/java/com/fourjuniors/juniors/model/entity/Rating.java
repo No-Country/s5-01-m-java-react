@@ -2,12 +2,14 @@ package com.fourjuniors.juniors.model.entity;
 
 
 import com.fourjuniors.juniors.model.enums.RatingEnum;
-import lombok.Data;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Entity
-@Data
+@NoArgsConstructor @AllArgsConstructor
+@Getter @Setter
+@Builder
 public class Rating {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

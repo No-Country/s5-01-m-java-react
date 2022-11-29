@@ -1,12 +1,14 @@
 package com.fourjuniors.juniors.model.entity;
 
-import lombok.Data;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Data
+@NoArgsConstructor @AllArgsConstructor
+@Getter @Setter
+@Builder
 @Table(name = "projects")
 public class Project {
     @Id
@@ -23,7 +25,7 @@ public class Project {
 
     private String link;
 
-    @OneToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST,CascadeType.MERGE,CascadeType.DETACH,CascadeType.REFRESH})
+    @OneToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST,CascadeType.MERGE})
     @JoinColumn(name = "image_id")
     private Image image;
 

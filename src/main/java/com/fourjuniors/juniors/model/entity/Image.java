@@ -1,12 +1,14 @@
 package com.fourjuniors.juniors.model.entity;
 
 
-import lombok.Data;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Entity
-@Data
+@NoArgsConstructor @AllArgsConstructor
+@Getter @Setter
+@Builder
 @Table(name = "image")
 public class Image {
     @Id
