@@ -1,11 +1,52 @@
+body{
+    background-color: #130400;
+}
+
 .titulo{
-    font-size: 2em;
+    font-size: 2.5em;
     writing-mode: vertical-rl;
     text-orientation: upright;
     font-weight: 700;
-
+    
+}
+.titulo.titulo-rojo{
+    color: #F84E4F;
+    font-size: 2.5em;
 }
 .mg{
-    font-size: 3em;
+    font-size: 2.5em;
     font-weight: 900;
+    color: #fff;
 }
+.titulo.titulo-invertido{
+    transform: rotate(180deg);
+    -webkit-text-stroke: 0.2px #E6E9F3;
+  color: transparent; 
+  font-size: 2.5em;
+}
+.titulo-horizontal{
+    transform: rotate(180deg);
+    -webkit-text-stroke: 0.2px #E6E9F3;
+  color: transparent; 
+  font-size: 2.5em;
+}
+.titulo-abajo{
+  color: #F84E4F;
+  font-size: 2.5em;
+}
+.seccion{
+  border-bottom: 1px solid #E6E9F3;
+}
+.cuadro-rojo{
+  border: 5px solid #F84E4F;
+}
+.link-portfolio{
+  color: #F84E4F;
+  font-size: 2em;
+}
+
+/* @media(max-width:767px) {
+  .rating{
+
+  }
+} */
