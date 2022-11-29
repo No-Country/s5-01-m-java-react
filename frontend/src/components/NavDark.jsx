@@ -3,6 +3,8 @@ import { NavLink } from 'react-router-dom'
 import Headroom from "react-headroom";
 import "bootswatch/dist/lux/bootstrap.min.css";
 import logo from '../assets/img/LOGO-LARGE-BLACK.svg'
+import BtnOutline from "./buttons/BtnOutline";
+import BtnRed from "./buttons/BtnRed";
 
 
 export default function NavDark() {
@@ -33,10 +35,10 @@ export default function NavDark() {
                                     <NavLink to="/detail" className="nav-link">Detail</NavLink>
                                 </li>
                                 <li className="nav-item">
-                                    <NavLink to="/login" className="nav-link">Inicia Sesion</NavLink>
+                                    <NavLink to="/login" className="nav-link"><BtnOutline label='Ingrese'  color='#F62223'/></NavLink>
                                 </li>
                                 <li className="nav-item">
-                                    <NavLink to="/register" className="nav-link">Registrate</NavLink>
+                                    <NavLink to="/register" className="nav-link"><BtnRed label='Registrate' color='#F62223'/></NavLink>
                                 </li>
 
                             </ul>
