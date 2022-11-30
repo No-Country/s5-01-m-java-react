@@ -1,6 +1,7 @@
 import React from "react";
 import logo from '../assets/img/LOGO.png'
 import '../pages/login/login.css';
+import BtnRed from "./buttons/BtnRed";
 
 export default function FormLogin() {
     return (
@@ -25,7 +26,9 @@ export default function FormLogin() {
                     <a href="#">TOCA AQUI</a>
                 </div>
 
-                <button>INGRESAR</button>
+                <div className='btnRed'>
+                    <BtnRed label='INGRESAR' color='#F62223' width='140px'/>
+                </div>
             </div>
 
         </div>

@@ -1,0 +1,15 @@
+textarea{
+    padding: 5px;
+    outline: none;
+}
+
+select{
+    padding: 5px;
+    outline: none;
+}
+
+.btnRed{
+    margin: auto;
+    margin-bottom: 15px;
+}
+

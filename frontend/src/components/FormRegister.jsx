@@ -1,6 +1,7 @@
 import React from "react";
 import logo from '../assets/img/LOGO.png'
 import '../pages/register/register.css';
+import BtnRed from "./buttons/BtnRed";
 
 export default function FormRegister() {
     return (
@@ -38,7 +39,9 @@ export default function FormRegister() {
                 <label htmlFor="">repetir contraseña</label>
                 <input type="password" className="margin"/>
 
-                <button>REGISTRARSE</button>
+                <div className='btnRed'>
+                    <BtnRed label='REGISTRARSE' color='#F62223' width='160px'/>
+                </div>
             </div>
 
         </div>

@@ -3,6 +3,8 @@ import { NavLink } from 'react-router-dom'
 import Headroom from "react-headroom";
 import "bootswatch/dist/lux/bootstrap.min.css";
 import logo from '../assets/img/logoLarge.png'
+import BtnOutline from "./buttons/BtnOutline";
+import BtnRed from "./buttons/BtnRed";
 
 
 export default function Nav() {
@@ -13,7 +15,7 @@ export default function Nav() {
                     <div className="container-fluid  ">
                         <div className="container d-flex justify-content-between ">
                             <div>
-                                <NavLink className="nav-link" to="/home"><img src={logo} alt="logo" width="20%" /></NavLink>
+                                <NavLink className="nav-link" to="/home"><img src={logo} alt="logo" width="30%" /></NavLink>
                             </div>
 
                             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,10 +35,10 @@ export default function Nav() {
                                     <NavLink to="/detail" className="nav-link">Detail</NavLink>
                                 </li>
                                 <li className="nav-item">
-                                    <NavLink to="/login" className="nav-link">Inicia Sesion</NavLink>
+                                    <NavLink to="/login" className="nav-link"><BtnOutline label='Ingrese' color='#F62223'/></NavLink>
                                 </li>
                                 <li className="nav-item">
-                                    <NavLink to="/register" className="nav-link">Registrate</NavLink>
+                                    <NavLink to="/register" className="nav-link"><BtnRed label='Registrate' color='#F62223'/></NavLink>
                                 </li>
 
                             </ul>

@@ -5,6 +5,8 @@ import title from '../../assets/img/title.png'
 import rectangle from '../../assets/img/rectangle.png'
 import "bootswatch/dist/lux/bootstrap.min.css";
 import polygon from '../../assets/img/polygon.png'
+import BtnRed from '../../components/buttons/BtnRed'
+import { Link } from 'react-router-dom'
 
 const Home = () => {
   return (
@@ -27,7 +29,9 @@ const Home = () => {
       <div className='container polygon mt-3'>
         <img src={polygon} alt="polygon" />
         <div>
-          <button type="button" class="btn btn-primary btnCenter">CTA</button>
+          <Link to="/Projects">
+            <BtnRed label='SUBE TU PROYECTO' color='#F62223' />
+          </Link>
         </div>
       </div>
 

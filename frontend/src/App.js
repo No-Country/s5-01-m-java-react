@@ -6,6 +6,7 @@ import Home from './pages/home/Home';
 import Detail from './pages/detail/Detail';
 import Login from './pages/login/Login';
 import Register from './pages/register/Register';
+import Projects from './pages/projects/Projects';
 
 
 
@@ -30,6 +31,10 @@ function App() {
         <Route
           path="/register"
           element={<Register />}
+        />
+        <Route
+          path="/projects"
+          element={<Projects />}
         />
       </Routes>
     </BrowserRouter>
