@@ -4,6 +4,7 @@ import com.fourjuniors.juniors.model.dto.MessageDto;
 import com.fourjuniors.juniors.utils.Operations;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
@@ -40,6 +41,12 @@ public class GlobalException {
         });
         return ResponseEntity.badRequest()
                 .body(new MessageDto(HttpStatus.BAD_REQUEST, Operations.trimBrackets(messages.toString())));
+    }
+
+    @ExceptionHandler(BadCredentialsException.class)
+    public ResponseEntity<MessageDto> badCredentialsException(BadCredentialsException ex){
+        return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                .body(new MessageDto(HttpStatus.NOT_FOUND, "bad credentials"));
     }
 
 }
