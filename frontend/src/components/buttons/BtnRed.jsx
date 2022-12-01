@@ -1,4 +1,5 @@
 import React from 'react'
+import './btns.css'
 
 const BtnRed = (props) => {
   return (
