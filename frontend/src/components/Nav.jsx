@@ -11,8 +11,8 @@ export default function Nav() {
     return (
         <>
             <Headroom>
-                <nav className="navbar navbar-expand-lg bg-white p-2" >
-                    <div className="container-fluid  ">
+                <nav className="navbar navbar-expand-lg bg-transparent" >
+                    <div className="container-fluid ">
                         <div className="container d-flex justify-content-between ">
                             <div>
                                 <NavLink className="nav-link" to="/home"><img src={logo} alt="logo" width="30%" /></NavLink>

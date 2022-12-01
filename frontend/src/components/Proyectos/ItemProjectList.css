@@ -1,0 +1,29 @@
+.cards-margin {
+    margin-top: 7%;
+    margin-right: 5%;
+    margin-left: 5%;
+}
+.pagination{
+    margin-top: 2%;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5rem;
+    font-size: 1.2rem;
+    gap:5px;
+    color: aqua;
+}
+
+.pagination .page-num{
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 3px;
+    font-weight: 400;
+    color: aliceblue;
+}
+
+.pagination .page-num:hover{
+    background-color: rgb(255, 255, 255);
+    color:#F84E4F;
+}
