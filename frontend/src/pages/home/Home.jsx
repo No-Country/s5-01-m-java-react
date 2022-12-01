@@ -22,7 +22,7 @@ const Home = () => {
           <img src={title} alt="Title" width="45px"/>
         </div>
         <div>
-          <img src={rectangle} alt="Imagen" />
+          <img src={polygon} alt="Imagen" />
         </div>
       </header>
 
