@@ -1,0 +1,102 @@
+[
+    {
+        "id": "1",
+        "image": "https://w6u4r7c2.stackpathcdn.com/wp-content/uploads/banner-de-curso-programador-jr-compress-1-1080x675.png",
+        "titulo": "4 Juniors",
+        "tecnologias": {
+            "tecno1": "react",
+            "tecno2": "node js"
+        },
+        "puntuacion": 4.5
+    },
+    {
+        "id": "2",
+        "image": "../../assets/img/image 2.svg",
+        "titulo": "Prueba Tecnica",
+        "tecnologias": {
+            "tecno1": "react",
+            "tecno2": "node js"
+        },
+        "puntuacion": 4.4
+    },
+    {
+        "id": "3",
+        "image": "../../assets/img/DIGITIZE - landing page 1.svg",
+        "titulo": "Digital",
+        "tecnologias": {
+            "tecno1": "react",
+            "tecno2": "node js"
+        },
+        "puntuacion": 4
+    },
+    {
+        "id": "4",
+        "image": "../../assets/img/image 2.svg",
+        "titulo": "diseño mucho",
+        "tecnologias": {
+            "tecno1": "react",
+            "tecno2": "node js"
+        },
+        "puntuacion": 3.9
+    },
+    {
+        "id": "5",
+        "image": "../../assets/img/Frame 17 1.svg",
+        "titulo": "Bartolito",
+        "tecnologias": {
+            "tecno1": "react",
+            "tecno2": "node js"
+        },
+        "puntuacion": 3.8
+    },
+    {
+        "id": "6",
+        "image": "../../assets/img/DIGITIZE - landing page 1.svg",
+        "titulo": "Testear",
+        "tecnologias": {
+            "tecno1": "react",
+            "tecno2": "node js"
+        },
+        "puntuacion": 3.7
+    },
+    {
+        "id": "7",
+        "image": "../../assets/img/image 2.svg",
+        "titulo": "Coders",
+        "tecnologias": {
+            "tecno1": "react",
+            "tecno2": "node js"
+        },
+        "puntuacion": 3.6
+    },
+    {
+        "id": "8",
+        "image": "../../assets/img/Frame 17 1.svg",
+        "titulo": "Digital",
+        "tecnologias": {
+            "tecno1": "react",
+            "tecno2": "node js"
+        },
+        "puntuacion": 3.5
+    },
+    {
+        "id": "9",
+        "image": "../../assets/img/DIGITIZE - landing page 1.svg",
+        "titulo": "Testear",
+        "tecnologias": {
+            "tecno1": "react",
+            "tecno2": "node js"
+        },
+        "puntuacion": 5
+    },
+    {
+        "id": "10",
+        "image": "../../assets/img/image 2.svg",
+        "titulo": "Bartolito",
+        "tecnologias": {
+            "tecno1": "react",
+            "tecno2": "node js"
+        },
+        "puntuacion": 4.7
+    }
+]
