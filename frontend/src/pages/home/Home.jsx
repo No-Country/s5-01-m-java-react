@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Nav from '../../components/Nav'
 import './home.css'
 import title from '../../assets/img/heroTitle1.svg'
@@ -7,8 +7,10 @@ import "bootswatch/dist/lux/bootstrap.min.css";
 import BtnRed from '../../components/buttons/BtnRed'
 import { Link } from 'react-router-dom'
 import ItemProjectContainer from '../../components/Proyectos/ItemProjectContainer'
+import Modal from '../../components/Modal';
 
 const Home = () => {
+  const [openModal, setOpenModal] = useState(false);
   return (
     <>
       <div className='Color-Header'>
@@ -27,9 +29,11 @@ const Home = () => {
             </div>
           </div>
           <div className='align-projects'>
-            <Link to="/Projects">
-              <BtnRed color='#F62223' width="200px" label='Sube tu Proyecto' />
-            </Link>
+            {/* <Link to="/Projects"> */}
+              <BtnRed color='#F62223' width="200px" label='Sube tu Proyecto' 
+               onClick ={() => setOpenModal(true)}/>
+            {/* </Link> */}
+            <Modal open={openModal} onClose={() => setOpenModal(false)}/>
           </div>
         </header>
       </div>
