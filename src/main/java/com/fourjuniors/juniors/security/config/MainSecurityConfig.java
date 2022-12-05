@@ -22,7 +22,6 @@ import static org.springframework.http.HttpMethod.GET;
 @EnableWebSecurity
 public class MainSecurityConfig {
 
-
     @Autowired
     UserDetailsServiceImpl userDetailsService;
 
@@ -44,7 +43,7 @@ public class MainSecurityConfig {
         authenticationManager = builder.build();
         http.authenticationManager(authenticationManager);
         http.csrf().disable();
-        http.cors().disable();
+        http.cors();
         http.authorizeRequests()
                 .antMatchers(GET, "/test/allUsers").hasAnyAuthority("ROLE_USER", "ROLE_ADMIN")
                 .antMatchers(GET, "/test/onlyAdmin").hasAnyAuthority("ROLE_ADMIN")
