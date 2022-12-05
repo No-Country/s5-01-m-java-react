@@ -68,4 +68,10 @@ public class UserServiceImpl implements UserService {
 
         return new LoginUserResponse(userDetails.getId(), userDetails.getUsername(), token);
     }
+
+    @Override
+    public User getUserByEmail(String email) throws ResourceNotFoundException {
+        return userRepository.findByEmail(email)
+                .orElseThrow(() -> new ResourceNotFoundException("user does not exist"));
+    }
 }

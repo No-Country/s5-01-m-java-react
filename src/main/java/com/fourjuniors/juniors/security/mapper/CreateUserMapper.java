@@ -4,11 +4,13 @@ import com.fourjuniors.juniors.security.model.entity.User;
 import com.fourjuniors.juniors.security.model.dto.response.CreateUserResponse;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 
 public class CreateUserMapper {
 
     public static CreateUserResponse mapToDto(User user){
         return CreateUserResponse.builder()
+                .id(user.getId())
                 .email(user.getEmail())
                 .password(user.getPassword())
                 .name(user.getName())
@@ -32,7 +34,7 @@ public class CreateUserMapper {
                 .stack(request.getStack())
                 .experience(request.getExperience())
                 .portfolio(request.getPortfolio())
-                .roles(new ArrayList<>())
+                .roles(new HashSet<>())
                 .build();
     }
 }

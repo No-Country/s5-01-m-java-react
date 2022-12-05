@@ -16,5 +16,6 @@ public class Image {
     private Long id;
 
     private String path;
+    private String keyBucket;
 
 }

@@ -3,7 +3,7 @@ package com.fourjuniors.juniors.security.model.dto.response;
 import com.fourjuniors.juniors.security.model.entity.Role;
 import lombok.*;
 
-import java.util.List;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -12,6 +12,7 @@ import java.util.List;
 @Builder
 public class CreateUserResponse {
 
+    private Long id;
     private String email;
     private String password;
     private String name;
@@ -20,5 +21,5 @@ public class CreateUserResponse {
     private String stack;
     private String experience;
     private String portfolio;
-    private List<Role> roles;
+    private Set<Role> roles;
 }
