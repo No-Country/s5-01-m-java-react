@@ -3,7 +3,7 @@ import logo from '../assets/img/LOGO.png'
 import '../pages/register/register.css';
 import BtnRed from "./buttons/BtnRed";
 
-export default function FormRegister() {
+export default function FormRegister() {   
     return (
         <div className="containerRegister">
 
@@ -23,11 +23,11 @@ export default function FormRegister() {
                 <input type="text" className="margin"placeholder="Doe"/>
                 <label htmlFor="">portfolio</label>
                 <input type="url" className="margin" placeholder="https://www.behance.net/johndoe"/>
-                <label htmlFor="">lorem</label>
+                <label htmlFor="">perfil</label>
                 <input type="text" className="margin"/>
-                <label htmlFor="">lorem</label>
+                <label htmlFor="">experiencia</label>
                 <input type="text" className="margin"/>
-                <label htmlFor="">lorem</label>
+                <label htmlFor="">stack de tecnologias</label>
                 <input type="text" className="margin"/>
                 <label htmlFor="">e-mail</label>
                 <input type="email" className="margin" placeholder="johndoe@gmail.com"/>
@@ -45,5 +45,6 @@ export default function FormRegister() {
             </div>
 
         </div>
+
     )
 }
