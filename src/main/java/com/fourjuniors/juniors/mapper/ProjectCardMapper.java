@@ -19,6 +19,7 @@ public class ProjectCardMapper {
                 .image(project.getImage().getPath())
                 .name(project.getName())
                 .stack(stackDto)
+                .type(project.getType())
                 .rating(rating)
                 .build();
     }

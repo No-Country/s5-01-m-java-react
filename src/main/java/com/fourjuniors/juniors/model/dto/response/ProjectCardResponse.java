@@ -12,6 +12,7 @@ public class ProjectCardResponse {
     private String image;
     private String name;
     private StackDto stack;
+    private String type;
     private double rating;
 
 }
