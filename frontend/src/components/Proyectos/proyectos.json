@@ -7,11 +7,11 @@
             "tecno1": "react",
             "tecno2": "node js"
         },
-        "puntuacion": 4.5
+        "puntuacion": 5
     },
     {
         "id": "2",
-        "image": "../../assets/img/image 2.svg",
+        "image": "https://w6u4r7c2.stackpathcdn.com/wp-content/uploads/banner-de-curso-programador-jr-compress-1-1080x675.png",
         "titulo": "Prueba Tecnica",
         "tecnologias": {
             "tecno1": "react",
@@ -21,7 +21,7 @@
     },
     {
         "id": "3",
-        "image": "../../assets/img/DIGITIZE - landing page 1.svg",
+        "image": "https://w6u4r7c2.stackpathcdn.com/wp-content/uploads/banner-de-curso-programador-jr-compress-1-1080x675.png",
         "titulo": "Digital",
         "tecnologias": {
             "tecno1": "react",
@@ -31,7 +31,7 @@
     },
     {
         "id": "4",
-        "image": "../../assets/img/image 2.svg",
+        "image": "https://w6u4r7c2.stackpathcdn.com/wp-content/uploads/banner-de-curso-programador-jr-compress-1-1080x675.png",
         "titulo": "diseño mucho",
         "tecnologias": {
             "tecno1": "react",
@@ -41,7 +41,7 @@
     },
     {
         "id": "5",
-        "image": "../../assets/img/Frame 17 1.svg",
+        "image": "https://cloudfront-us-east-1.images.arcpublishing.com/infobae/Q743HABRBVA5VHY5CVGLTXAXSI.jpg",
         "titulo": "Bartolito",
         "tecnologias": {
             "tecno1": "react",
@@ -51,7 +51,7 @@
     },
     {
         "id": "6",
-        "image": "../../assets/img/DIGITIZE - landing page 1.svg",
+        "image": "https://cloudfront-us-east-1.images.arcpublishing.com/infobae/Q743HABRBVA5VHY5CVGLTXAXSI.jpg",
         "titulo": "Testear",
         "tecnologias": {
             "tecno1": "react",
@@ -61,7 +61,7 @@
     },
     {
         "id": "7",
-        "image": "../../assets/img/image 2.svg",
+        "image": "https://d1ih8jugeo2m5m.cloudfront.net/2022/05/ejemplos-de-paginas-web.jpg",
         "titulo": "Coders",
         "tecnologias": {
             "tecno1": "react",
@@ -71,7 +71,7 @@
     },
     {
         "id": "8",
-        "image": "../../assets/img/Frame 17 1.svg",
+        "image": "https://d1ih8jugeo2m5m.cloudfront.net/2022/05/ejemplos-de-paginas-web.jpg",
         "titulo": "Digital",
         "tecnologias": {
             "tecno1": "react",
@@ -81,22 +81,22 @@
     },
     {
         "id": "9",
-        "image": "../../assets/img/DIGITIZE - landing page 1.svg",
+        "image": "https://www.emprenderalia.com/wp-content/uploads/por-que-las-webs-fracasan.jpg",
         "titulo": "Testear",
         "tecnologias": {
             "tecno1": "react",
             "tecno2": "node js"
         },
-        "puntuacion": 5
+        "puntuacion": 3.4
     },
     {
         "id": "10",
-        "image": "../../assets/img/image 2.svg",
+        "image": "https://www.emprenderalia.com/wp-content/uploads/por-que-las-webs-fracasan.jpg",
         "titulo": "Bartolito",
         "tecnologias": {
             "tecno1": "react",
             "tecno2": "node js"
         },
-        "puntuacion": 4.7
+        "puntuacion": 3.1
     }
 ]

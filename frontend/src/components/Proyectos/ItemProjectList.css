@@ -1,5 +1,5 @@
 .cards-margin {
-    margin-top: 7%;
+    margin-top: 4%;
     margin-right: 5%;
     margin-left: 5%;
 }
@@ -16,14 +16,52 @@
 }
 
 .pagination .page-num{
-    padding: 8px 15px;
+    margin-left: 10px;
+    padding: 10px 17px;
+    border: 0.5px solid rgb(255, 255, 255);
     cursor: pointer;
     border-radius: 3px;
     font-weight: 400;
     color: aliceblue;
 }
 
+.pagination .active{
+    color:#F84E4F;
+
+}
+
 .pagination .page-num:hover{
     background-color: rgb(255, 255, 255);
     color:#F84E4F;
+    
 }
+
+.pagination .page-num-next{
+    color:#F84E4F;
+    border: 1px solid #F84E4F;
+    padding: 10px;
+    text-decoration-line: none;
+    margin-left: 30px;
+}
+
+.pagination .page-num-previous{
+    margin-right: 20px;
+    color:#F84E4F;
+    border: 1px solid #F84E4F;
+    padding: 10px;
+    text-decoration-line: none;
+
+}
+
+.cuadro {
+    display: flex !important;
+    justify-content: center;
+  }
+
+  .py-5-ranking{
+    padding-bottom: 6rem!important;
+  }
+
+  .container{
+    margin-left: 5%;
+  }
