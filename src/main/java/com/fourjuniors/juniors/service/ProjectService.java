@@ -5,6 +5,7 @@ import com.fourjuniors.juniors.model.dto.request.ProjectRequest;
 import com.fourjuniors.juniors.model.dto.response.ProjectCardResponse;
 import com.fourjuniors.juniors.model.dto.response.ProjectResponse;
 import com.fourjuniors.juniors.model.entity.Image;
+import com.fourjuniors.juniors.model.entity.Project;
 import com.fourjuniors.juniors.security.model.entity.User;
 
 import java.util.List;
@@ -21,4 +22,5 @@ public interface ProjectService {
 
     void deleteProject(Long id);
 
+    ProjectResponse addMembersToTeam(Set<User> team, Project project);
 }

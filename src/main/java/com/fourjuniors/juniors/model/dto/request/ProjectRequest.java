@@ -20,6 +20,5 @@ public class ProjectRequest {
     private String description;
     @NotBlank(message = "project link is mandatory")
     private String link;
-    private String[] team;
 
 }

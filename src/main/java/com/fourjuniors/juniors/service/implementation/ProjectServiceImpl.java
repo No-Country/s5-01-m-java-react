@@ -121,4 +121,20 @@ public class ProjectServiceImpl implements ProjectService {
     public void deleteProject(Long id) {
 
     }
+
+    @Override
+    public ProjectResponse addMembersToTeam(Set<User> team, Project project) {
+
+        team.forEach(user -> {
+            user.getProjects().add(project);
+            userRepo.save(user);
+        });
+        Set<Rating> ratingList = ratingRepo.findAllByProjectId(project.getId());
+
+        if (ratingList.isEmpty())
+            return ProjectMapper.mapToDto(project, team, 0.0);
+
+        double ratingValue = RatingUtils.getAverageValue(ratingList);
+        return ProjectMapper.mapToDto(project, team, ratingValue);
+    }
 }
