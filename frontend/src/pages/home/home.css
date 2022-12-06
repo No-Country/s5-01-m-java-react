@@ -42,5 +42,25 @@
     text-align: center;
     margin-top: 15px;
     padding-bottom: 100px;
+}
 
+.Title-Project h2{
+    margin-top: 30px;
+    color: #F84E4F;
+    text-align: center;
+    font-size: 4.3rem;
+}
+
+
+.Title-Destacados h3{
+    margin-top: 18px;
+    margin-left: 6%;
+    color: #F84E4F;
+    font-size: 2.5rem;
+}
+
+.Border-Destacados{
+    margin-top: 50px;
+    border-top: 7px solid #F84E4F;
+    border-bottom: 7px solid #F84E4F;
 }

@@ -3,13 +3,13 @@ import "bootswatch/dist/lux/bootstrap.min.css";
 import './ItemProject.css';
 import star from '../../assets/img/Star 1 (roja).svg'
 
-export default function ItemProject({ proyecto }) {
+export default function ItemRanking({ proyecto }) {
 
     return (
         <>
-            <div className="col">
+            <div className='cuadro'>
                 <div className="card imagen">
-                    <img src={proyecto.image} className="card-img-top" height="300" alt="..." />
+                    <img src={proyecto.image} className="card-img-top max-image" height="350" alt="..." />
                     <div className="card-body">
                         <div className='margin-title'>
                             <h5 className="card-title">{proyecto.name}</h5>
@@ -27,6 +27,7 @@ export default function ItemProject({ proyecto }) {
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </>

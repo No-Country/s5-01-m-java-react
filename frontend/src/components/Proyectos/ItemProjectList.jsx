@@ -37,16 +37,16 @@ export default function ItemList(props) {
 
             <ReactPaginate
                 breakLabel="..."
-                nextLabel="  >> "
+                nextLabel="  Siguiente"
                 onPageChange={handlePageClick}
                 pageRangeDisplayed={3}
                 pageCount={pageCount}
-                previousLabel=" <<  "
+                previousLabel=" Anterior  "
                 renderOnZeroPageCount={null}
                 containerClassName="pagination"
                 pageClassName="page-num"
-                previousLinkClassName="page-num"
-                nextLinkClassName="page-num"
+                previousLinkClassName="page-num-previous"
+                nextLinkClassName="page-num-next"
                 activeLinkClassName="active"
             />
         </>

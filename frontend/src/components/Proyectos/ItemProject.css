@@ -1,37 +1,88 @@
-.card{
-    border-top: 1px solid rgba(51,51,51,.1);
+.card {
+    border-top: 1px solid rgba(51, 51, 51, .1);
 }
 
-.imagen img{
-    width: 17rem;
-    height: 10rem;
-}
-
-.card-title{
+.card-title {
     background-color: #F84E4F;
     padding: 10px;
     margin-top: -5%;
 }
 
-.card-body{
+.card-body {
     border: 4px solid;
     border-color: #F84E4F;
     background-color: #130400;
 }
 
-.card-body h5{
+.card-body h5 {
     color: rgb(255, 255, 255);
     text-align: center;
 }
 
-.margin-tecno{
-    margin-top: 4%;
+.margin-title {
+    width: 90%;
+    margin-left: 5%;
+    align-items: center;
 }
-.card-body p{
-    color:  #F84E4F;
+
+.margin-tecno {
+    margin-left: 20px;
+    margin-top: 4%;
+    width: 100px;
+    text-align: center;
+}
+
+.card-body p {
+    color: #F84E4F;
     padding: 1%;
     border: 1px solid;
     border-color: #F84E4F;
 }
 
+.data-body {
+    display: flex;
+    width: 100%;
+}
 
+.puntuacion {
+    margin-left: 21%;
+    width: 100px;
+    margin-top: 5.4%;
+
+}
+
+.puntuacion h3 {
+    text-align: end;
+    margin-left: 15%;
+    color: #F84E4F;
+    font-size: 4rem;
+    width: 100%;
+}
+
+.star {
+    align-items: flex-end;
+    align-content: flex-end;
+    margin-top: 7.5%;
+    margin-left: 4%;
+}
+
+.star img {
+    width: 55px;
+    height: 55px;
+}
+
+.card {
+    --bs-card-spacer-y: 0rem;
+    --bs-card-border-width: 0px;
+    --bs-card-bg: ;
+}
+
+.imagen .max-image {
+    width: 500px;
+}
+
+@media(max-width:767px) {
+    .imagen .max-image {
+        width: 400px;
+    }
+}

@@ -1,19 +1,48 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import Headroom from "react-headroom";
 import "bootswatch/dist/lux/bootstrap.min.css";
 import ItemProjectList from './ItemProjectList';
-import data from './proyectos.json'
+import axios from "axios";
+import Buttons from "./Buttons";
+import { List } from 'react-bootstrap-icons';
+
+
 
 export default function ItemProjectContainer() {
 
-    const [projects, setprojects] = useState([]);
-    const { categoria } = useParams();
+  const [list, setList] = useState([]);
+  useEffect(() => {
+    axios({
+      url: "https://s5-01-m-java-react-production.up.railway.app/api/projects",
+    })
+      .then((response) => {
+        setList(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
 
 
-    return (
-        <>
-            <ItemProjectList data={data}/>
-        </>
-    )
+  const menuItems = [...new Set(list.map((Val) => Val.type))];
+
+  const filterItem = async (curcat) => {
+    const newItem = list.filter((newVal) => {
+      return newVal.type === curcat;
+    });
+    setList(newItem);
+  };
+
+
+  return (
+    <>
+        <div className="row">
+          <Buttons
+            filterItem={filterItem}
+            setItem={setList}
+            menuItems={menuItems}
+          />
+        </div>
+      <ItemProjectList data={list} />
+    </>
+  )
 }
