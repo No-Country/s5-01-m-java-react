@@ -18,7 +18,7 @@ public class JuniorsApplication {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
 				registry.addMapping("/**")
-						.allowedOrigins("http://localhost:3000", "*").allowedMethods("GET", "POST","PUT", "DELETE");
+						.allowedOrigins("http://localhost:3000",  "https://4juniors.vercel.app", "*").allowedMethods("GET", "POST","PUT", "DELETE");
 			}
 
 		};
