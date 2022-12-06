@@ -24,6 +24,3 @@ Diseño:<br>
 
 -Joaquin Accorsi
 
-Testing:<br>
-
--Pamela Suarez
