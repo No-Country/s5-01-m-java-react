@@ -30,7 +30,7 @@ export default function Nav() {
                                     <NavLink to="/home" className="nav-link color ">Proyectos</NavLink>
                                 </li>
                                 {/* <li className="nav-item align-items-center">
-                                    <NavLink to="/home" className="nav-link">Home</NavLink>
+                                    <NavLink to="/home" className="nav-link color">Sube tu proyecto</NavLink>
                                 </li> */}
                                 <li className="nav-item">
                                     <NavLink to="/detail" className="nav-link color detail">Detail</NavLink>

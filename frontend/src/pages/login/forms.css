@@ -2,13 +2,6 @@
     background-color: #130400;
 }
 
-.linkForm{
-    color: #F62223;
-    text-decoration: underline;
-    text-align:end;
-    padding: 10px;
-}
-
 .containerLogin{
     min-height: 100vh;
     display: flex;
