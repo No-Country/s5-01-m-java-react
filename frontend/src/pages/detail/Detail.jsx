@@ -13,10 +13,13 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import BtnOutline from "../../components/buttons/BtnOutline";
 import { Rating } from 'react-simple-star-rating'
-
+import { useDispatch, useSelector } from 'react-redux'
 
 
 const Detail = () => {
+
+ 
+
   const [rating, setRating] = useState(0)
   var settings = {
     dots: true,
@@ -139,7 +142,7 @@ const Detail = () => {
                   <a href="#" className='link-portfolio'>Ver portfolio</a>
                 </div>
               </div>
-              
+
 
               {/* <div className="cuadro-rojo p-3 d-flex flex-column align-items-center">
                     <h2 className='text-center text-white mb-3'>DISEÑO DE PRODUCTO</h2>

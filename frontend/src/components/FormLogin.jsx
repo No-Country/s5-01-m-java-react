@@ -3,8 +3,10 @@ import logo from '../assets/img/LOGO.png'
 import '../pages/login/login.css';
 import BtnRed from "./buttons/BtnRed";
 import axios from "axios";
-import AuthProvider from "../context/AuthProvider";
 import { NavLink } from 'react-router-dom'
+import { setUserData } from '../store/slices/user/index'
+import { useDispatch } from 'react-redux'
+
 const baseURL = 'https://s5-01-m-java-react-production.up.railway.app/auth/login'
 
 
@@ -17,40 +19,48 @@ export default function FormLogin() {
     const [pwd, setPwd] = useState("");
     const [errMsg, setErrMsg] = useState("");
     const [success, setSuccess] = useState(false);
+
     useEffect(() => {
         userRef.current.focus();
     }, []);
+
     useEffect(() => {
         setErrMsg("");
     }, [user, pwd]);
-
-    const { setAuth } = useContext(AuthProvider);
-    const handleSubmit = async (e) => {
+    
+    const dispatch = useDispatch()
+    const handleSubmit = async (e) =>  {
         console.log("funcioPost")
+      
         e.preventDefault();
         try {
-            const response = await axios.post(baseURL, {
+            axios.post(baseURL, {
                 "email": user,
                 "password": pwd
             })
+                .then(function (response) {
+                    // console.log(response.data.username);
+                    dispatch(setUserData(response.data))
+                    setUser("");
+                    setPwd("");
+                    setSuccess(true);
+                })
+                .catch(function (err) {
+                    if (!err?.response) {
+                        setErrMsg("No Server Response");
+                    } else if (err.response?.status === 400) {
+                        setErrMsg("Missing Username or Password");
+                    } else if (err.response?.status === 401) {
+                        setErrMsg("Unauthorized");
+                    } else {
+                        setErrMsg("Datos incorrectos");
+                    }
+                    errRef.current.focus();
+                });
 
-            const accessToken = response?.data?.accessToken;
-            const roles = response?.data?.roles;
-            setAuth({ user, pwd, roles, accessToken });
-            setUser("");
-            setPwd("");
-            setSuccess(true);
-        } catch (err) {
-            if (!err?.response) {
-                setErrMsg("No Server Response");
-            } else if (err.response?.status === 400) {
-                setErrMsg("Missing Username or Password");
-            } else if (err.response?.status === 401) {
-                setErrMsg("Unauthorized");
-            } else {
-                setErrMsg("Datos incorrectos");
-            }
-            errRef.current.focus();
+
+        } catch (error) {
+           console.log(error)
         }
     };
 
