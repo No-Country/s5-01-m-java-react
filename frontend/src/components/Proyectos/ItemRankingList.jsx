@@ -14,19 +14,21 @@ export default function ItemList(props) {
     const { data } = props;
 
     var settings = {
-        dots: true,
+        dots: false,
         className: "center",
         centerMode: false,
         infinite: false,
-        centerPadding: "30px",
+        centerPadding: "10px",
         slidesToShow: 2.3,
         slidesToScroll: 2,
-        speed: 500};
+        speed: 500,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        pauseOnHover: true}
 
     return (
         <>
             <section className='py-5-ranking'>
-                <div className="container">
                     <Slider {...settings} className="mt-5" >
                         {data.map(proyecto => {
                             return (
@@ -37,7 +39,6 @@ export default function ItemList(props) {
                         })}
 
                     </Slider>
-                </div>
             </section>
         </>
     );
