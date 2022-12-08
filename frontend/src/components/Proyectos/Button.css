@@ -21,20 +21,95 @@
     text-align: center;
 }
 
-.margin-btn{
-    margin-left: 60px;
+
+
+
+
+
+@media (min-width:320px)  { /* smartphones, iPhone, portrait 480x320 phones */
+
 }
 
-.text-filtrar{
-    margin-left: 96px;
-    margin-bottom: 40px;
-    margin-top: 50px;
-    width: 150px;
-    background-color: #F62223;
+@media (min-width:481px)  { /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+
 }
-.text-filtrar p{
-    text-align: center;
-    align-items: center;
-    color: white;
-    padding-top: 13px;
+
+@media (min-width:641px)  { /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+
+}
+
+@media (min-width:961px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */ 
+
+}
+
+@media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */ 
+
+}
+
+@media (min-width:1280px) { /* hi-res laptops and desktops */ 
+
+    .text-filtrar{
+        margin-left: 40px;
+        margin-bottom: 40px;
+        margin-top: 50px;
+        width: 300px;
+    }
+    
+    .text-filtrar p{
+        text-align: center;
+        align-items: center;
+        color:#F84E4F;
+        padding-top: 13px;
+        font-size: 2rem;
+    }
+
+    .margin-btn{
+        margin-left: 50px;
+    }
+
+}
+
+@media (min-width:1400px) { /* hi-res laptops and desktops */ 
+    .text-filtrar{
+        margin-left: 45px;
+        margin-bottom: 40px;
+        margin-top: 50px;
+        width: 300px;
+    }
+    
+    .text-filtrar p{
+        text-align: center;
+        align-items: center;
+        color:#F84E4F;
+        padding-top: 13px;
+        font-size: 2rem;
+    }
+
+    .margin-btn{
+        margin-left: 60px;
+    }
+
+}
+
+
+@media (min-width:1700px) { /* hi-res laptops and desktops */ 
+    .text-filtrar{
+        margin-left: 60px;
+        margin-bottom: 40px;
+        margin-top: 50px;
+        width: 400px;
+    }
+    
+    .text-filtrar p{
+        text-align: center;
+        align-items: center;
+        color:#F84E4F;
+        padding-top: 13px;
+        font-size: 3rem;
+    }
+
+    .margin-btn{
+        margin-left: 80px;
+    }
+
 }

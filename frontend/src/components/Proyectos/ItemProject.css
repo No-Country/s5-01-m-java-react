@@ -71,6 +71,33 @@
     height: 55px;
 }
 
+.puntuacion-ranking {
+    margin-left: 30%;
+    width: 100px;
+    margin-top: 1%;
+
+}
+
+.puntuacion-ranking h3 {
+    text-align: end;
+    margin-left: 15%;
+    color: #F84E4F;
+    font-size: 4rem;
+    width: 100%;
+}
+
+.star-ranking {
+    align-items: flex-end;
+    align-content: flex-end;
+    margin-top: 7.5%;
+    margin-left: 4.5%;
+}
+
+.star-ranking img {
+    width: 55px;
+    height: 55px;
+}
+
 .card {
     --bs-card-spacer-y: 0rem;
     --bs-card-border-width: 0px;

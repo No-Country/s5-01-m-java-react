@@ -19,10 +19,10 @@ export default function ItemRanking({ proyecto }) {
                                 <p>{proyecto.stack.tech1}</p>
                                 <p>{proyecto.stack.tech2}</p>
                             </div>
-                            <div className='puntuacion'>
+                            <div className='puntuacion-ranking'>
                                 <h3>{proyecto.rating}</h3>
                             </div>
-                            <div className='star'>
+                            <div className='star-ranking'>
                                 <img src={star}></img>
                             </div>
                         </div>
