@@ -1,6 +1,6 @@
 import { useRef, useState, useEffect, useContext } from "react";
 import logo from '../assets/img/LOGO.png'
-import '../pages/login/login.css';
+import '../pages/login/forms.css';
 import BtnRed from "./buttons/BtnRed";
 import axios from "axios";
 import AuthProvider from "../context/AuthProvider";
@@ -102,7 +102,7 @@ export default function FormLogin() {
                                 required />
                             <div className="passwordLogin">
                                 <p>¿Perdiste tu contraseña?</p>
-                                <a href="#">TOCA AQUI</a>
+                                <a href="#" className="fw-bold">TOCA AQUI</a>
                             </div>
 
                             <div className='btnRed'>

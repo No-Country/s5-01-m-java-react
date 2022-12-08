@@ -1,0 +1,32 @@
+.navbar.active{
+    background-color: #E6E9F3;
+}
+
+.navbar{
+    height: 100px;
+}
+
+.bgNav{
+    background-color: #E6E9F3;
+}
+
+.bg{
+    background-color: #130400;
+}
+
+.color{
+    color: red !important;
+    text-decoration: underline;
+}
+
+.detail{
+    margin-right: 200px;
+}
+
+@media screen and (max-width:994px){
+    .detail{
+        margin-right: 0px;
+    }
+    
+}
+
