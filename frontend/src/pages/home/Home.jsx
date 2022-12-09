@@ -19,19 +19,19 @@ const Home = () => {
         <header className='container-fluid'>
           <div className='header'>
             <div>
-              <h1 className='title'>Muestra tu Proyecto!</h1>
-              <p className='paragraph'>Muestra tu proyecto en la comunidad y califica los proyectos de otros Juniors.</p>
+              <h1 className='title'>MUESTRA TU PROYECTO!</h1>
+              <p className='paragraph'>muestra tu proyecto en la comunidad y califica los proyectos de otros Juniors.</p>
             </div>
             <div className='title-image'>
-              <img src={title} alt="Title" width="54" />
+              <img src={title} alt="Title" />
             </div>
-            <div>
-              <img src={rectangle} alt="Imagen" height="400" />
+            <div className='rectangle'>
+              <img src={rectangle} alt="Imagen"/>
             </div>
           </div>
           <div className='align-projects'>
             {/* <Link to="/Projects"> */}
-            <BtnRed color='#F62223' width="200px" label='Sube tu Proyecto'
+            <BtnRed  color='#F62223' width="150px" label='SUBE TU PROYECTO'
               onClick={() => setOpenModal(true)} />
             {/* </Link> */}
             <Modal open={openModal} onClose={() => setOpenModal(false)} />

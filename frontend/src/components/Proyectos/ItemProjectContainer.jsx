@@ -3,7 +3,7 @@ import "bootswatch/dist/lux/bootstrap.min.css";
 import ItemProjectList from './ItemProjectList';
 import axios from "axios";
 import Buttons from "./Buttons";
-import { List } from 'react-bootstrap-icons';
+// import { List } from 'react-bootstrap-icons';
 
 
 

@@ -4,8 +4,10 @@ import '../pages/register/register.css';
 import BtnRed from "./buttons/BtnRed";
 import axios from "axios";
 import { useState } from "react";
+import { NavLink } from 'react-router-dom'
 
 export default function FormRegister() { 
+    const [success, setSuccess] = useState(false);
     const url = 'https://s5-01-m-java-react-production.up.railway.app/auth/signup'
     const [data, setData] = useState({
         email:"",
@@ -31,10 +33,11 @@ export default function FormRegister() {
             experience:data.experience
         })
         .then(res =>{
+            setSuccess(true);
             console.log(res.data)
         })
     }
-
+    
     function handle(e){
         const newData= {...data}
         newData[e.target.id] = e.target.value
@@ -44,6 +47,14 @@ export default function FormRegister() {
     
 
     return (
+        <>
+        {success ? (
+            <section className="d-flex flex-column align-items-center mt-5">
+                <h1 className="text-white">Usuario registrado con éxito</h1>
+                <NavLink to="/login" className="text-danger">LOGIN</NavLink>
+            </section>
+        ) : (
+
         <div className="containerRegister">
 
             <div>
@@ -85,6 +96,8 @@ export default function FormRegister() {
         </form>
 
         </div>
-
+        )}
+    </>
+    
     )
 }

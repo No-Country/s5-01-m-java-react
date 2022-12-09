@@ -39,6 +39,8 @@ export default function FormProjects() {
                     <option value=""></option>
                     <option value=""></option>
                 </select>
+                <label htmlFor="">e-mails de integrantes</label>
+                <input type="text" className="margin" placeholder="johndoe@gmail.com" required/>
                 <label htmlFor="">descripcion</label>
                 <textarea type="text" className="margin" placeholder="¿Qué busca solucionar tu proyecto o cuál es su objetivo?"/>
                 <label htmlFor="">link al deploy del proyecto</label>

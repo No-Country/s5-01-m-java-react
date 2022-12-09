@@ -13,8 +13,8 @@ const Modal = ({open, onClose}) =>{
             <div className="closeButtonContainer">
                 <img className="imgCloseButton"  src={CloseButton} alt="" onClick={onClose}/>
             </div>
-            <p className="closeButtonP">¡Registrate para mostrar <br />tu proyecto y calificar el <br /> de otros juniors!</p>
-            <Link to="/Projects">
+            <p className="modalP">¡Registrate para mostrar <br />tu proyecto y calificar el <br /> de otros juniors!</p>
+            <Link to="/Register">
                 <BtnRed color='#F62223' width="200px" label='REGISTRATE' />
             </Link>
             </div>
