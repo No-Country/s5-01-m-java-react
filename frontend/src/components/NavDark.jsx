@@ -5,14 +5,25 @@ import "bootswatch/dist/lux/bootstrap.min.css";
 import logo from '../assets/img/LOGO-LARGE-BLACK.svg'
 import BtnOutline from "./buttons/BtnOutline";
 import BtnRed from "./buttons/BtnRed";
+import { useSelector } from 'react-redux'
 
 
-export default function NavDark() {
+const NavDark = () => {
+    const { list: user } = useSelector(state => state.user)
+    {
+        console.log(user)
+    }
     return (
         <>
             <Headroom>
+
+                <nav className="navbar navbar-expand-lg navbar-dark bg-transparent" >
+
+                    <div className="container-fluid  ">
+
                 <nav className="navbar navbar-expand-lg bg " >
                     <div className="container-fluid">
+
                         <div className="container d-flex justify-content-between ">
                             <div>
                                 <NavLink className="nav-link" to="/home"><img src={logo} alt="logo" width="57%" /></NavLink>
@@ -34,21 +45,27 @@ export default function NavDark() {
                                 <li className="nav-item">
                                     <NavLink to="/detail" className="nav-link color fw-bold detail">Detail</NavLink>
                                 </li>
-                                <li className="nav-item">
+
+
+                                {
+                                    user != "" ? <li className="nav-item"><h4 className="text-white">{user.username}</h4></li> :
+                                        <>
+                                            <li className="nav-item">
                                     <NavLink to="/login" className="nav-link"><BtnOutline label='Inicia Sesion'  color='#F62223' width='145px'/></NavLink>
                                 </li>
-                                <li className="nav-item">
-                                    <NavLink to="/register" className="nav-link"><BtnRed label='Registrate' color='#F62223'/></NavLink>
-                                </li>
-
+                                            <li className="nav-item">
+                                                <NavLink to="/register" className="nav-link"><BtnRed label='Registrate' color='#F62223' /></NavLink>
+                                            </li>
+                                        </>
+                                }
                             </ul>
 
                         </div>
                     </div>
                 </nav>
             </Headroom>
-
-
         </>
     )
 }
+
+export default NavDark
