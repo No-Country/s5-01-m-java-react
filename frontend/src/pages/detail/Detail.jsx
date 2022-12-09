@@ -21,18 +21,20 @@ const Detail = () => {
   const { list: proyect } = useSelector(state => state.proyect)
   const [post, setPost] = React.useState(null);
   const proyId = proyect.id;
-   const proyName = proyect.name;
-   const proyDescription = proyect.description ;
- 
+  const proyName = proyect.name;
+  const proyStack = proyect.stack;
+  const proyImage = proyect.image;
+  const proyRating = proyect.rating;
+
   React.useEffect(() => {
-    axios.get(baseURL+proyId).then((response) => {
+    axios.get(baseURL + proyId).then((response) => {
       setPost(response.data);
       console.log(response.data)
       console.log(proyId)
     });
   }, []);
 
-  
+
 
   const [rating, setRating] = useState(0)
   var settings = {
@@ -79,8 +81,8 @@ const Detail = () => {
                 <h1 className='titulo titulo-rojo'>JUNIOR</h1>
               </div>
               <div className="col-12 col-md-5 d-flex justify-content-center align-items-center p-0">
-                <img src={imagenDetail} alt="logo" className='w-100' />
-               
+                <img src={proyImage} alt="logo" className='w-100' />
+
               </div>
               <div className="col-12 col-md-5 d-flex flex-column  d-flex justify-content-between ps-4">
                 <h1 className='text-white text-center text-md-start mt-3'>{proyName}</h1>
@@ -90,7 +92,7 @@ const Detail = () => {
                     <BtnOutline label="LABEL" />
                   </div>
                   <div className='col-12 col-lg-6 mt-2 d-flex justify-content-center justify-content-lg-start align-items-bottom'>
-                    <h1 className='text-white calificationNumber'>5</h1>
+                    <h1 className='text-white calificationNumber'>{proyRating}</h1>
                     {/* <FontAwesomeIcon icon={faStar} className="fs-1 mg me-2" /> */}
                     <img src={star1} alt="logo" className='ms-2 calificationStar' />
                   </div>
@@ -177,9 +179,9 @@ const Detail = () => {
                 <div className="d-none d-md-flex col-1"><img src={starLine} alt="logo" /></div>
                 <div className="col-10">
                   <div className="row">
-                    <div className="col-12 col-md-4 d-flex justify-content-center mt-2"><BtnOutline label="LABEL" /></div>
-                    <div className="col-12 col-md-4 d-flex justify-content-center mt-2"><BtnOutline label="LABEL" /></div>
-                    <div className="col-12 col-md-4 d-flex justify-content-center mt-2"><BtnOutline label="LABEL" /></div>
+
+                    <div className="col-12 col-md-4 d-flex justify-content-center mt-2"><BtnOutline label={proyStack.tech1} /></div>
+                    <div className="col-12 col-md-4 d-flex justify-content-center mt-2"><BtnOutline label={proyStack.tech2} /></div>
 
                   </div>
                 </div>
