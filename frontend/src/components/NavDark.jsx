@@ -10,23 +10,16 @@ import { useSelector } from 'react-redux'
 
 const NavDark = () => {
     const { list: user } = useSelector(state => state.user)
-    {
-        console.log(user)
-    }
+    
     return (
         <>
             <Headroom>
-
                 <nav className="navbar navbar-expand-lg navbar-dark bg-transparent" >
 
                     <div className="container-fluid  ">
-
-                <nav className="navbar navbar-expand-lg bg " >
-                    <div className="container-fluid">
-
                         <div className="container d-flex justify-content-between ">
                             <div>
-                                <NavLink className="nav-link" to="/home"><img src={logo} alt="logo" width="57%" /></NavLink>
+                                <NavLink className="nav-link" to="/home"><img src={logo} alt="logo" width="80%" /></NavLink>
                             </div>
 
                             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,7 +27,7 @@ const NavDark = () => {
                             </button>
                         </div>
 
-                        <div className="collapse navbar-collapse bg" id="navbarTogglerDemo02">
+                        <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
                             <ul className="navbar-nav align-items-center">
                                 <li className="nav-item ">
                                     <NavLink to="/home" className="nav-link color fw-bold">Proyectos</NavLink>
@@ -51,15 +44,14 @@ const NavDark = () => {
                                     user != "" ? <li className="nav-item"><h4 className="text-white">{user.username}</h4></li> :
                                         <>
                                             <li className="nav-item">
-                                    <NavLink to="/login" className="nav-link"><BtnOutline label='Inicia Sesion'  color='#F62223' width='145px'/></NavLink>
-                                </li>
+                                                <NavLink to="/login" className="nav-link"><BtnOutline label='Inicia Sesion' color='#F62223' width='145px' /></NavLink>
+                                            </li>
                                             <li className="nav-item">
                                                 <NavLink to="/register" className="nav-link"><BtnRed label='Registrate' color='#F62223' /></NavLink>
                                             </li>
                                         </>
                                 }
                             </ul>
-
                         </div>
                     </div>
                 </nav>

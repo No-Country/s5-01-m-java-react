@@ -3,9 +3,9 @@ import logo from '../assets/img/LOGO.png'
 import '../pages/login/forms.css';
 import BtnRed from "./buttons/BtnRed";
 import axios from "axios";
-import { NavLink } from 'react-router-dom'
 import { setUserData } from '../store/slices/user/index'
 import { useDispatch } from 'react-redux'
+import { Navigate } from 'react-router-dom';
 
 const baseURL = 'https://s5-01-m-java-react-production.up.railway.app/auth/login'
 
@@ -20,8 +20,10 @@ export default function FormLogin() {
     const [errMsg, setErrMsg] = useState("");
     const [success, setSuccess] = useState(false);
 
+
     useEffect(() => {
         userRef.current.focus();
+       
     }, []);
 
     useEffect(() => {
@@ -30,8 +32,7 @@ export default function FormLogin() {
     
     const dispatch = useDispatch()
     const handleSubmit = async (e) =>  {
-        console.log("funcioPost")
-      
+
         e.preventDefault();
         try {
             axios.post(baseURL, {
@@ -44,6 +45,7 @@ export default function FormLogin() {
                     setUser("");
                     setPwd("");
                     setSuccess(true);
+                   
                 })
                 .catch(function (err) {
                     if (!err?.response) {
@@ -65,17 +67,14 @@ export default function FormLogin() {
     };
 
 
-
+  
 
 
 
     return (
         <>
             {success ? (
-                <section className="d-flex flex-column align-items-center mt-5">
-                    <h1 className="text-white">Bienvenido a 4JUNIORS!!</h1>
-                    <NavLink to="/home" className="text-danger">Ir al inicio</NavLink>
-                </section>
+                <Navigate to="/home"/>
             ) : (
 
                 <div className="containerLogin">

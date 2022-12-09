@@ -9,6 +9,7 @@ import Register from './pages/register/Register';
 import Projects from './pages/projects/Projects';
 import { Provider } from 'react-redux'
 import store from './store';
+import FormProjects from './components/FormProjects';
 
 
 function App() {
@@ -37,6 +38,10 @@ function App() {
           <Route
             path="/projects"
             element={<Projects />}
+          />
+          <Route
+            path="/formprojects"
+            element={<FormProjects />}
           />
         </Routes>
       </BrowserRouter>

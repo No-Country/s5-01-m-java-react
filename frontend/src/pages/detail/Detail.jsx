@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 import "bootswatch/dist/lux/bootstrap.min.css";
 import './detail.css'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faStar } from '@fortawesome/free-regular-svg-icons'
 import NavDark from '../../components/NavDark';
 import starLine from '../../assets/img/Star-line.svg'
 import starRed from '../../assets/img/Star-red.svg'
@@ -13,12 +11,28 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import BtnOutline from "../../components/buttons/BtnOutline";
 import { Rating } from 'react-simple-star-rating'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
+import axios from 'axios';
+const baseURL = "https://s5-01-m-java-react-production.up.railway.app/api/projects/";
+
 
 
 const Detail = () => {
-
+  const { list: proyect } = useSelector(state => state.proyect)
+  const [post, setPost] = React.useState(null);
+  const proyId = proyect.id;
+   const proyName = proyect.name;
+   const proyDescription = proyect.description ;
  
+  React.useEffect(() => {
+    axios.get(baseURL+proyId).then((response) => {
+      setPost(response.data);
+      console.log(response.data)
+      console.log(proyId)
+    });
+  }, []);
+
+  
 
   const [rating, setRating] = useState(0)
   var settings = {
@@ -66,10 +80,11 @@ const Detail = () => {
               </div>
               <div className="col-12 col-md-5 d-flex justify-content-center align-items-center p-0">
                 <img src={imagenDetail} alt="logo" className='w-100' />
+               
               </div>
               <div className="col-12 col-md-5 d-flex flex-column  d-flex justify-content-between ps-4">
-                <h1 className='text-white text-center text-md-start mt-3'>4JUNIORS</h1>
-                <p className='text-white text-center text-md-start'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, odit. Hic expedita vero porro cumque inventore, quo totam minima omnis repudiandae sed a maiores assumenda.</p>
+                <h1 className='text-white text-center text-md-start mt-3'>{proyName}</h1>
+                <p className='text-white text-center text-md-start'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, molestias! Facilis eligendi non saepe, repudiandae veniam cumque aut verit</p>
                 <div className='row justify-content-between align-items-center text-center'>
                   <div className='col-12 col-lg-6 px-0 mt-2  d-flex justify-content-center'>
                     <BtnOutline label="LABEL" />

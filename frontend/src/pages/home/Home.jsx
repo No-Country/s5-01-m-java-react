@@ -5,13 +5,15 @@ import title from '../../assets/img/heroTitle1.svg'
 import rectangle from '../../assets/img/box-image.svg'
 import "bootswatch/dist/lux/bootstrap.min.css";
 import BtnRed from '../../components/buttons/BtnRed'
-import { Link } from 'react-router-dom'
 import ItemProjectContainer from '../../components/Proyectos/ItemProjectContainer'
 import ItemProjectContainerRanking from '../../components/Proyectos/ItemProjectContainerRanking'
 import Modal from '../../components/Modal';
+import { useSelector } from 'react-redux'
+import { NavLink } from 'react-router-dom'
 
 const Home = () => {
   const [openModal, setOpenModal] = useState(false);
+  const { list: user } = useSelector(state => state.user)
   return (
     <>
       <div className='Color-Header'>
@@ -26,14 +28,13 @@ const Home = () => {
               <img src={title} alt="Title" />
             </div>
             <div className='rectangle'>
-              <img src={rectangle} alt="Imagen"/>
+              <img src={rectangle} alt="Imagen" />
             </div>
           </div>
           <div className='align-projects'>
-            {/* <Link to="/Projects"> */}
-            <BtnRed  color='#F62223' width="150px" label='SUBE TU PROYECTO'
-              onClick={() => setOpenModal(true)} />
-            {/* </Link> */}
+            {
+              user.username ?  <NavLink to="/formprojects" className="nav-link"><BtnRed color='#F62223' width="150px" label='SUBE TU PROYECTO' /></NavLink> : <BtnRed color='#F62223' width="150px" label='SUBE TU PROYECTO' onclick={() => { setOpenModal(true) }} />     
+            }
             <Modal open={openModal} onClose={() => setOpenModal(false)} />
           </div>
         </header>

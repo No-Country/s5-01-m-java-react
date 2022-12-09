@@ -6,9 +6,11 @@ import logo from '../assets/img/logoLarge.png'
 import BtnOutline from "./buttons/BtnOutline";
 import BtnRed from "./buttons/BtnRed";
 import './nav.css'
+import { useSelector } from 'react-redux'
 
 
 export default function Nav() {
+    const { list: user } = useSelector(state => state.user)
     return (
         <>
             <Headroom>
@@ -35,12 +37,17 @@ export default function Nav() {
                                 <li className="nav-item">
                                     <NavLink to="/detail" className="nav-link color detail">Detail</NavLink>
                                 </li>
-                                <li className="nav-item">
-                                    <NavLink to="/login" className="nav-link"><BtnOutline label='Inicia Sesion' color='#F62223' width="145px"/></NavLink>
-                                </li>
-                                <li className="nav-item">
-                                    <NavLink to="/register" className="nav-link"><BtnRed label='Registrate' color='#F62223'/></NavLink>
-                                </li>
+                                {
+                                    user != "" ? <li className="nav-item"><h4 className="text-white">{user.username}</h4></li> :
+                                        <>
+                                            <li className="nav-item">
+                                                <NavLink to="/login" className="nav-link"><BtnOutline label='Inicia Sesion' color='#F62223' width='145px' /></NavLink>
+                                            </li>
+                                            <li className="nav-item">
+                                                <NavLink to="/register" className="nav-link"><BtnRed label='Registrate' color='#F62223' /></NavLink>
+                                            </li>
+                                        </>
+                                }
 
                             </ul>
 
