@@ -6,15 +6,18 @@ import logo from '../assets/img/LOGO-LARGE-BLACK.svg'
 import BtnOutline from "./buttons/BtnOutline";
 import BtnRed from "./buttons/BtnRed";
 import { useSelector } from 'react-redux'
+import './nav.css'
 
 
 const NavDark = () => {
     const { list: user } = useSelector(state => state.user)
+    // let userDataLocal = JSON.parse(localStorage.getItem('userDataLocal')) 
+    
     
     return (
         <>
             <Headroom>
-                <nav className="navbar navbar-expand-lg navbar-dark bg-transparent" >
+                <nav className="navbar navbar-expand-lg navbar-dark " >
 
                     <div className="container-fluid  ">
                         <div className="container d-flex justify-content-between ">
@@ -32,16 +35,11 @@ const NavDark = () => {
                                 <li className="nav-item ">
                                     <NavLink to="/home" className="nav-link color fw-bold">Proyectos</NavLink>
                                 </li>
-                                {/* <li className="nav-item align-items-center">
-                                    <NavLink to="/home" className="nav-link">Home</NavLink>
-                                </li> */}
-                                <li className="nav-item">
-                                    <NavLink to="/detail" className="nav-link color fw-bold detail">Detail</NavLink>
-                                </li>
+                               
 
 
                                 {
-                                    user != "" ? <li className="nav-item"><h4 className="text-white">{user.username}</h4></li> :
+                                    user != ""  ? <li className="nav-item"><h4 className="text-white">{user.username}</h4></li> :
                                         <>
                                             <li className="nav-item">
                                                 <NavLink to="/login" className="nav-link"><BtnOutline label='Inicia Sesion' color='#F62223' width='145px' /></NavLink>

@@ -17,6 +17,7 @@ export default function ItemRanking({ proyecto }) {
     const verDetalle = (e) => {
         e.preventDefault();
         dispatch(setProyect(proyecto));
+        localStorage.setItem('setProyectID', JSON.stringify(proyecto.id) )
         setSuccess(true)
 
 

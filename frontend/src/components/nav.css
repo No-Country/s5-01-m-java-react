@@ -22,6 +22,9 @@
 .detail{
     margin-right: 200px;
 }
+.navbar-dark{
+    background-color: #130400 !important;
+}
 
 @media screen and (max-width:994px){
     .detail{

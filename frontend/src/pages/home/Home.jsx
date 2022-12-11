@@ -14,6 +14,10 @@ import { NavLink } from 'react-router-dom'
 const Home = () => {
   const [openModal, setOpenModal] = useState(false);
   const { list: user } = useSelector(state => state.user)
+ // let userDataLocal = JSON.parse(localStorage.getItem('userDataLocal')) 
+
+
+
   return (
     <>
       <div className='Color-Header'>
@@ -34,12 +38,13 @@ const Home = () => {
           <div className='align-projects'>
             {
               user.username ?  <NavLink to="/formprojects" className="nav-link"><BtnRed color='#F62223' width="150px" label='SUBE TU PROYECTO' /></NavLink> : <BtnRed color='#F62223' width="150px" label='SUBE TU PROYECTO' onclick={() => { setOpenModal(true) }} />     
+                
             }
             <Modal open={openModal} onClose={() => setOpenModal(false)} />
           </div>
         </header>
       </div>
-      <div className='Title-Project'>
+      <div className='Title-Project' id="title-proyects">
         <h2>Proyectos</h2>
       </div>
       <div className='Border-Destacados'>

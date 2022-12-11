@@ -45,6 +45,7 @@ export default function FormLogin() {
                     setUser("");
                     setPwd("");
                     setSuccess(true);
+                    // localStorage.setItem('userDataLocal', JSON.stringify(response.data) )
                    
                 })
                 .catch(function (err) {

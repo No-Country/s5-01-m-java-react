@@ -7,10 +7,18 @@ import BtnOutline from "./buttons/BtnOutline";
 import BtnRed from "./buttons/BtnRed";
 import './nav.css'
 import { useSelector } from 'react-redux'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faStar, faRightFromBracket} from '@fortawesome/free-solid-svg-icons'
+
 
 
 export default function Nav() {
     const { list: user } = useSelector(state => state.user)
+   // let userDataLocal = JSON.parse(localStorage.getItem('userDataLocal')) 
+
+
+ 
+
     return (
         <>
             <Headroom>
@@ -29,16 +37,13 @@ export default function Nav() {
                         <div className="collapse navbar-collapse bgNav" id="navbarTogglerDemo02">
                             <ul className="navbar-nav align-items-center">
                                 <li className="nav-item">
+                                   
                                     <NavLink to="/home" className="nav-link color ">Proyectos</NavLink>
                                 </li>
-                                {/* <li className="nav-item align-items-center">
-                                    <NavLink to="/home" className="nav-link color">Sube tu proyecto</NavLink>
-                                </li> */}
-                                <li className="nav-item">
-                                    <NavLink to="/detail" className="nav-link color detail">Detail</NavLink>
-                                </li>
+                                
                                 {
-                                    user != "" ? <li className="nav-item"><h4 className="text-white">{user.username}</h4></li> :
+                                     user != "" ? <><li className="nav-item"><h4 className="">{user.username}</h4></li></> :
+                                    // user != "" ? <><li className="nav-item"><h4 className="">{userDataLocal.username}</h4></li><li> <FontAwesomeIcon icon={faRightFromBracket} className="text-black fs-2" onClick={logout}/></li></> :
                                         <>
                                             <li className="nav-item">
                                                 <NavLink to="/login" className="nav-link"><BtnOutline label='Inicia Sesion' color='#F62223' width='145px' /></NavLink>
