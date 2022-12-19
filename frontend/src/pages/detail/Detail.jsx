@@ -18,12 +18,14 @@ const baseURL = "https://s5-01-m-java-react-production.up.railway.app/api/projec
 
 
 const Detail = () => {
-  // const { list: proyect } = useSelector(state => state.proyect)
-  // const { list: user } = useSelector(state => state.user)
+  //const { list: proyect } = useSelector(state => state.proyect)
+  const { list: user } = useSelector(state => state.user)
   const [post, setPost] = React.useState(null);
   const [ready, setReady] = React.useState(false);
   // const proyId = proyect?.id;
   const proyTeam = post?.team;
+  
+  
 
 
   let ProyectID = JSON.parse(localStorage.getItem('setProyectID'))
@@ -51,41 +53,69 @@ const Detail = () => {
     pauseOnHover: true
   };
 
-  const handleRating = (rate) => {
-    console.log(rate)
-    axios.post(`https://s5-01-m-java-react-production.up.railway.app/api/projects/${ProyectID}/rating`, {
-      "rating": 2.5,
+  // const handleRating = (rate) => {
+  //   console.log(rate)
+  //   axios.post(`https://s5-01-m-java-react-production.up.railway.app/api/projects/${ProyectID}/rating`, {
+  //     "rating": 2.5,
 
 
-    })
-      .then(function (response) {
-        // console.log(response.data.username);
-        setRating(rate);
+  //   })
+  //     .then(function (response) {
+  //       // console.log(response.data.username);
+  //       setRating(rate);
 
-        alert("Calificacion registrada!")
+  //       alert("Calificacion registrada!")
 
-      })
-      .catch(function (err) {
-        console.log("error")
-        // if (!err?.response) {
-        //     setErrMsg("No Server Response");
-        // } else if (err.response?.status === 400) {
-        //     setErrMsg("Missing Username or Password");
-        // } else if (err.response?.status === 401) {
-        //     setErrMsg("Unauthorized");
-        // } else {
-        //     setErrMsg("Datos incorrectos");
-        // }
-        // errRef.current.focus();
-      });
+  //     })
+  //     .catch(function (err) {
+  //       console.log("error")
+  //       // if (!err?.response) {
+  //       //     setErrMsg("No Server Response");
+  //       // } else if (err.response?.status === 400) {
+  //       //     setErrMsg("Missing Username or Password");
+  //       // } else if (err.response?.status === 401) {
+  //       //     setErrMsg("Unauthorized");
+  //       // } else {
+  //       //     setErrMsg("Datos incorrectos");
+  //       // }
+  //       // errRef.current.focus();
+  //     });
 
 
 
-    //   // other logic
-  }
+  //   //   // other logic
+  // }
   // const onPointerEnter = () => console.log('Enter')
   // const onPointerLeave = () => console.log('Leave')
   // const onPointerMove = (value: number, index: number) => console.log(value, index)
+
+  const handleRating = (rate) => {
+
+    const headers = {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + user.token
+    };
+    console.log(headers.Authorization)
+
+    const data = {
+      rating: rate
+    };
+   
+
+    axios.post(`https://s5-01-m-java-react-production.up.railway.app/api/projects/${ProyectID}/rating`, data, {
+      headers: headers
+    }).then(response => alert("gracias por su calificación"))
+    .catch(error=>{
+      //console.log(error.response.status)
+      if(error.response.status == 400){
+        alert("no puedes calificar tus propios proyectos")
+      }else{
+        console.log(error)
+      }
+
+    } )
+
+  };
 
 
 
